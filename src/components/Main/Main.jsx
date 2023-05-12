@@ -13,7 +13,7 @@ import {
 } from 'components/contexts/LoginStateContext'
 import Toast from 'components/Toast/Toast'
 import Posting from 'components/Posting/Posting'
-import { dummyPosts } from 'Data/dummyPosts'
+import { dummyPosts } from 'data/dummyPosts'
 
 const Main = () => {
   // 管理尚未登入的顯示 model

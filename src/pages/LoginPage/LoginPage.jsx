@@ -15,14 +15,14 @@ function LoginPage() {
               type="text"
               placeholder="請輸入 CNomey 帳號（手機號碼或 Email）"
             />
-            <input type="text" placeholder="請輸入密碼" />
+            <input type="password" placeholder="請輸入密碼" />
             <div>
-              <label for="Checked">
+              <label htmlFor="Checked">
                 <input
                   id="Checked"
                   type="checkbox"
                   value=""
-                  checked="true"
+                  defaultChecked={true}
                 ></input>
                 保持登入狀態
               </label>
