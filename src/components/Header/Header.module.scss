@@ -1,0 +1,215 @@
+.HeaderContainer {
+  width: 100vw;
+  .HeaderTopContainer {
+    width: 100%;
+    height: 60px;
+    background-color: #ae2024;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 997;
+    top: 0;
+    .LeftPart {
+      margin-left: 8px;
+      display: flex;
+      align-items: center;
+      .Hamburger {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .Logo {
+        width: 42px;
+        height: 42px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .RightPart {
+      display: flex;
+      align-items: center;
+      margin: 0 16px;
+      .SearchContainer {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        &:hover {
+          cursor: pointer;
+        }
+        &:hover > .SearchOutside {
+          opacity: 60%;
+        }
+        .SearchOutside {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: #f44f55;
+          opacity: 40%;
+          position: absolute;
+          z-index: -1;
+        }
+        .Search {
+          position: absolute;
+          z-index: 0;
+        }
+      }
+      .IconContainer {
+        display: none;
+      }
+    }
+  }
+
+  .HeaderBottomContainer {
+    width: 100vw;
+    height: 32px;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 60px;
+    z-index: 997;
+    ul {
+      height: 32px;
+      display: flex;
+      line-height: 32px;
+      li {
+        width: 100%;
+        list-style: none;
+        text-align: center;
+        white-space: nowrap;
+        &:hover {
+          cursor: pointer;
+          border-bottom: 2px solid #ae2024;
+        }
+        a {
+          width: 100%;
+          text-decoration: none;
+          color: #8f8f8f;
+          font-size: 1rem;
+        }
+      }
+      .Active {
+        border-bottom: 2px solid #ae2024;
+      }
+    }
+  }
+  .Heading {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .HeaderContainer {
+    .HeaderTopContainer {
+      .RightPart {
+        gap: 0.7rem;
+        .IconContainer {
+          display: block;
+          text-align: center;
+          &:hover {
+            cursor: pointer;
+          }
+          &:hover > .Text {
+            color: #fff;
+          }
+          .Icon {
+            width: 26px;
+            height: 26px;
+          }
+          .Text {
+            color: #fc9;
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 728px) {
+  .HeaderContainer {
+    .HeaderTopContainer {
+      .RightPart {
+        gap: 0.55rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .HeaderContainer {
+    .HeaderTopContainer {
+      .RightPart {
+        .SearchContainer {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .HeaderContainer {
+    .Heading {
+      display: block;
+      position: fixed;
+      top: 18px;
+      left: 7.3rem;
+      z-index: 997;
+      font-size: 1.3rem;
+      color: #fff;
+      letter-spacing: 0.2rem;
+      font-weight: 600;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .HeaderContainer {
+    .HeaderTopContainer {
+      top: 28px;
+      .LeftPart {
+        margin-left: 1rem;
+        .Hamburger {
+          display: none;
+        }
+      }
+      .RightPart {
+        margin-right: 1rem;
+      }
+    }
+
+    .HeaderBottomContainer {
+      display: none;
+    }
+
+    .Heading {
+      top: 45px;
+      left: 4.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .HeaderContainer {
+    .HeaderTopContainer {
+      .LeftPart {
+        margin-left: 55px;
+      }
+      .RightPart {
+        margin-right: 55px;
+      }
+    }
+    .Heading {
+      left: 7.3rem;
+    }
+  }
+}

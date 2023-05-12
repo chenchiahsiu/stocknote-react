@@ -1,0 +1,156 @@
+.SearchInputContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  .SearchContainer {
+    width: 96%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0.2rem;
+    position: relative;
+    button {
+      border: none;
+      width: 35px;
+      height: 35px;
+      background-color: #fff;
+      border-radius: 50%;
+      position: relative;
+      margin-right: 0.5rem;
+      &:hover {
+        background-color: #f8f8f8;
+        cursor: pointer;
+      }
+      .Return {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: none;
+      }
+    }
+    .InputContainer {
+      width: 96%;
+      position: relative;
+      .SearchIcon {
+        position: absolute;
+        left: 1.1rem;
+        top: 0.8rem;
+      }
+      input {
+        width: 100%;
+        padding: 10px 16px;
+        border: 1px solid #e5e5e5;
+        border-radius: 21.5px;
+        font-size: 0.9375rem;
+        padding-left: 2.6rem;
+        &:focus {
+          outline: none;
+        }
+      }
+      span {
+        display: none;
+      }
+    }
+    .BottomText {
+      display: none;
+    }
+  }
+}
+.None {
+  display: none;
+}
+
+@media screen and (min-width: 760px) {
+  .SearchInputContainer,
+  .None {
+    all: unset;
+    position: fixed;
+    top: 6.5px;
+    left: 50%;
+    z-index: 997;
+    transform: translate(-50%, 0);
+    width: 360px;
+    height: 48px;
+    .SearchContainer {
+      all: unset;
+      button {
+        display: none;
+        .Return {
+          display: none;
+        }
+      }
+      .InputContainer {
+        all: unset;
+        width: 100%;
+        .SearchIcon {
+          display: none;
+        }
+        input {
+          all: unset;
+          background-color: #fff;
+          width: 97%;
+          height: 30px;
+          font-size: 0.8125rem;
+          padding-left: 10px;
+          border-bottom: 1px solid grey;
+        }
+        span {
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 30px;
+          padding: 6.5px 14px;
+          font-size: 0.8125rem;
+          background: linear-gradient(yellow, orange);
+          &:hover {
+            cursor: pointer;
+            background: linear-gradient(orange, yellow);
+          }
+        }
+      }
+      .BottomText {
+        display: flex;
+        font-size: 0.75rem;
+        margin-top: 3px;
+        display: flex;
+        align-items: center;
+        .Title {
+          color: #cdcdcd;
+        }
+        ul {
+          display: flex;
+          color: #fc9;
+          li {
+            list-style: none;
+            margin-right: 5px;
+            a:hover {
+              cursor: pointer;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .SearchInputContainer,
+  .None {
+    left: 60%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .SearchInputContainer,
+  .None {
+    left: 56%;
+    top: 35px;
+  }
+}

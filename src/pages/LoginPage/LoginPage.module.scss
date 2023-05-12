@@ -1,0 +1,263 @@
+.LoginPageContainer {
+  width: 100vw;
+  height: 168vh;
+  background-color: #fff;
+  padding: 0 10px;
+  .LoginPageOuterContainer {
+    max-width: 500px;
+    max-height: 93%;
+    margin: 0 auto;
+    padding: 0 auto;
+    .LoginPageInnerContainer {
+      max-width: 440px;
+      max-height: 100%;
+      margin: 0 auto;
+      padding-top: 85px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .Logo {
+        max-width: 120px;
+        max-height: 120px;
+        margin-bottom: 30px;
+      }
+      .TopSection {
+        max-width: 100%;
+        max-height: 250px;
+        padding-top: 20px;
+        margin-bottom: 20px;
+        input {
+          font-family: 'Microsoft JhengHei', sans-serif, sans-serif;
+          font-size: 100%;
+          color: #2d2d2d;
+          width: 100%;
+          padding: 12px 16px;
+          border: 1px solid #e9e6e6;
+          border-radius: 10px;
+          background-color: #fff;
+          margin-bottom: 23px;
+        }
+        div {
+          font-family: 'Microsoft JhengHei', sans-serif;
+          display: flex;
+          justify-content: space-between;
+          height: 16px;
+          margin-bottom: 23px;
+          label {
+            width: 20px;
+            color: #2d2d2d;
+            font-size: 14px;
+            white-space: nowrap;
+            input {
+            }
+          }
+          a {
+            color: #3d6aaf;
+            font-size: 14px;
+            text-decoration: none;
+          }
+        }
+        button {
+          font-family: 'Microsoft JhengHei', sans-serif, sans-serif;
+          width: 100%;
+          color: #fff;
+          border: 2px solid #e21e28;
+          background-color: #e21e28;
+          padding: 12px 16px;
+          border-radius: 10px;
+          text-align: center;
+          font-size: 100%;
+        }
+      }
+      .BottomSection {
+        width: 100%;
+        font-family: 'Microsoft JhengHei', sans-serif;
+        margin-bottom: 20px;
+        .Regist {
+          text-align: center;
+          margin: 4px 0 24px;
+          span.Member {
+            color: #616161;
+            text-align: center;
+            font-weight: 700;
+          }
+          a {
+            color: #3d6aaf;
+            font-weight: 700;
+          }
+        }
+        .LoginContainer {
+          margin-bottom: 26px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .LeftLine,
+          .RightLine {
+            display: block;
+            height: 1px;
+            background-color: #cbcbcb;
+            width: 40%;
+          }
+          .Login {
+            font-family: sans-serif;
+            display: block;
+            color: #616161;
+            font-weight: normal;
+            margin: 0 10px;
+            min-width: 65px;
+          }
+        }
+        .Button {
+          button {
+            font-family: 'Microsoft JhengHei', sans-serif, sans-serif;
+            margin-bottom: 12px;
+            font-size: 100%;
+          }
+          .Google {
+            background: #fff;
+            border: 2px solid #b0b0b0;
+            color: #3c4043;
+            width: 100%;
+            font-weight: 700;
+            text-align: center;
+            padding: 12px 16px;
+            border-radius: 10px;
+            display: flex;
+            img {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+            span {
+              width: 100%;
+            }
+          }
+          .FB {
+            border: 2px solid #1877f2;
+            background: #1877f2;
+            color: #fff;
+            width: 100%;
+            font-weight: 700;
+            text-align: center;
+            padding: 12px 16px;
+            border-radius: 10px;
+            display: flex;
+            img {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+            span {
+              width: 100%;
+            }
+          }
+          .Apple {
+            border: 2px solid #050708;
+            background: #050708;
+            color: #fff;
+            width: 100%;
+            font-weight: 700;
+            text-align: center;
+            padding: 12px 16px;
+            border-radius: 10px;
+            display: flex;
+            img {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+            span {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .Footer {
+    width: 100vw;
+    min-height: 100px;
+    font-family: 'Microsoft JhengHei', sans-serif, sans-serif;
+    background-color: #fff;
+    border-top: solid 1px #ddd;
+    .FooterContainer {
+      width: 90%;
+      height: 100%;
+      margin: 0 auto;
+      .Announcement {
+        width: 90%;
+        color: #2d2d2d;
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        padding-top: 10px;
+        margin-top: 10px;
+      }
+      ul {
+        display: flex;
+        max-width: 300px;
+        justify-content: space-between;
+        margin: 0 auto;
+        li {
+          list-style: none;
+          white-space: nowrap;
+          a {
+            color: #3d6aaf;
+            font-size: 12px;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .LoginPageContainer {
+    height: 150vh;
+    .Footer {
+      .FooterContainer {
+        .Announcement {
+          font-size: 15px;
+        }
+        ul {
+          li {
+            a {
+              font-size: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .LoginPageContainer {
+    .LoginPageOuterContainer {
+      .LoginPageInnerContainer {
+        width: 488px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.38);
+        border-radius: 8px;
+        margin-bottom: 10px;
+        .BottomSection {
+          width: 90%;
+        }
+      }
+    }
+    .Footer {
+      .FooterContainer {
+        .Announcement {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+          div {
+            margin-right: 30px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

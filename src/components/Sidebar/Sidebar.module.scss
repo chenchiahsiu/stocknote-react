@@ -1,0 +1,207 @@
+.SidebarContainer {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .SidebarContainer {
+    display: block;
+    width: 150px;
+    height: 80vh;
+    .TopPart {
+      display: flex;
+      .Avatar {
+        width: 50px;
+        height: 50px;
+      }
+      .Status {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-left: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .Name {
+          color: #4d0000;
+          margin-bottom: 4px;
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-decoration-color: #4d0000;
+            text-decoration-thickness: 0.5px;
+          }
+        }
+        .Level {
+          position: relative;
+          &:hover {
+            box-shadow: 0 -1.5px #000 inset;
+          }
+          .LV {
+            color: #ae2024;
+          }
+          .Number {
+            font-weight: 500;
+            margin-left: 4px;
+          }
+          .Score {
+            position: absolute;
+            width: 190px;
+            background-color: #fffcf0;
+            color: #b0b0b0;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 12px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            display: flex;
+            display: none;
+            span {
+              display: inline-block;
+            }
+            .Zero {
+              color: #000;
+              margin-right: 4px;
+            }
+          }
+          .Score::before {
+            content: '';
+            border-bottom: 7.5px solid #cfcece;
+            border-right: 7.5px solid transparent;
+            border-left: 7.5px solid transparent;
+            position: absolute;
+            left: 15px;
+            top: -7.5px;
+          }
+          .Score::after {
+            content: '';
+            border-bottom: 7px solid #fffcf0;
+            border-right: 7px solid transparent;
+            border-left: 7px solid transparent;
+            position: absolute;
+            left: 16px;
+            top: -6.5px;
+          }
+          &:hover > .Score {
+            display: block;
+          }
+        }
+      }
+    }
+    .BottomPart {
+      display: flex;
+      margin: 16px 0;
+      justify-content: center;
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 4px;
+        border-right: 1px solid #d4d4d4;
+        .Number {
+          color: #ae2024;
+          font-weight: 700;
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-thickness: 0.5px;
+          }
+        }
+        .Zero {
+          &:hover {
+            cursor: text;
+            text-decoration: none;
+          }
+        }
+        .Text {
+          font-size: 13px;
+          margin-top: 8px;
+        }
+      }
+      .BorderNone {
+        border: none;
+      }
+    }
+    .OptionContainer {
+      .TopOption {
+        margin: 10px auto;
+        padding: 16px 0;
+        border-top: 1px solid #d4d4d4;
+        border-bottom: 1px solid #d4d4d4;
+        div {
+          display: flex;
+          width: 100%;
+          padding: 7px;
+          border-radius: 3px;
+          font-size: 0.9375rem;
+          align-items: center;
+          &:hover {
+            cursor: pointer;
+            background-color: #ddd;
+          }
+          span {
+            margin-left: 8px;
+          }
+          .HOT {
+            color: #fff;
+            background-color: #ce2f34;
+            padding: 4px;
+            font-size: 0.75rem;
+            border-radius: 3px;
+            margin-left: 12px;
+            &:hover {
+              opacity: 80%;
+            }
+          }
+          .New {
+            color: #fff;
+            background-color: #216a7a;
+            padding: 4px;
+            font-size: 0.75rem;
+            border-radius: 3px;
+            margin-left: 12px;
+            &:hover {
+              opacity: 80%;
+            }
+          }
+        }
+        .Active {
+          background-color: #bbb;
+          color: #fff;
+          .message {
+            fill: #fff;
+          }
+          &:hover {
+            background-color: #bbb;
+          }
+        }
+      }
+    }
+    .BottomOption {
+      border-bottom: 1px solid #d4d4d4;
+      padding: 10px 0 24px;
+      div {
+        display: flex;
+        width: 100%;
+        padding: 7px;
+        border-radius: 3px;
+        font-size: 0.9375rem;
+        align-items: center;
+        position: relative;
+        &:hover {
+          cursor: pointer;
+          background-color: #ddd;
+        }
+        span {
+          margin-left: 8px;
+        }
+        .Arrow {
+          position: absolute;
+          right: 7px;
+        }
+      }
+    }
+    .LastOption {
+      border: none;
+    }
+  }
+}
