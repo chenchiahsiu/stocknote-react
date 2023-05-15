@@ -16,11 +16,11 @@ import { ReactComponent as Money } from 'assets/money.svg'
 import { ReactComponent as Cry } from 'assets/cry.svg'
 import { ReactComponent as Relly } from 'assets/relly.svg'
 import { ReactComponent as Angry } from 'assets/angry.svg'
-import { ReactComponent as GarbageCan } from 'assets/garbage_can.svg'
+import { ReactComponent as Trashcan } from 'assets/trashcan.svg'
 import { ReactComponent as Collect } from 'assets/collect.svg'
 import { ReactComponent as Warning } from 'assets/warning.svg'
 import { ReactComponent as Lock } from 'assets/lock.svg'
-import { ReactComponent as History } from 'assets/history.svg'
+import { ReactComponent as Edit } from 'assets/edit.svg'
 
 import { useContext, useState } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
@@ -142,8 +142,8 @@ const Post = ({ post }) => {
         <div className={styles.Features}>
           <ul className={styles.FeaturesContainer}>
             <li className={styles.Feature}>
-              <GarbageCan className={styles.Icon} />
-              <span>刪除此推文</span>
+              <Trashcan className={styles.Icon} />
+              <span>刪除文章</span>
             </li>
             <li className={styles.Feature}>
               <Collect className={styles.Icon} />
@@ -161,9 +161,9 @@ const Post = ({ post }) => {
               <Lock className={styles.Icon} />
               <span>封鎖此人</span>
             </li>
-            <li className={styles.Feature} onClick={() => handleToast()}>
-              <History className={styles.Icon} />
-              <span>查看編輯紀錄</span>
+            <li className={styles.Feature}>
+              <Edit className={styles.Icon} />
+              <span>編輯</span>
             </li>
           </ul>
         </div>
