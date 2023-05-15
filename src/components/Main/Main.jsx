@@ -45,11 +45,11 @@ const Main = () => {
 
       setPosts((prevPosts) => {
         return [
-          ...prevPosts,
           {
             content: data.content,
             id: data.id,
           },
+          ...prevPosts,
         ]
       })
       setInputValue('')
@@ -72,11 +72,11 @@ const Main = () => {
 
       setPosts((prevPosts) => {
         return [
-          ...prevPosts,
           {
             content: data.content,
             id: data.id,
           },
+          ...prevPosts,
         ]
       })
       setInputValue('')
@@ -91,11 +91,12 @@ const Main = () => {
     const getPostsAsync = async () => {
       try {
         const posts = await getPosts()
-        setPosts(
-          posts.map((post) => ({
+        const postsReverse = posts
+          .map((post) => ({
             ...post,
           }))
-        )
+          .reverse()
+        setPosts(postsReverse)
       } catch (error) {
         console.error(error)
       }
