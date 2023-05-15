@@ -1,4 +1,4 @@
-import styles from 'components/Toast/Toast.module.scss'
+import styles from 'components/Modal/Toast/Toast.module.scss'
 import { ReactComponent as Cross } from 'assets/cross.svg'
 
 import { useContext } from 'react'

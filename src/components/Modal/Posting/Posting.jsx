@@ -1,4 +1,4 @@
-import styles from 'components/Posting/Posting.module.scss'
+import styles from 'components/Modal/Posting/Posting.module.scss'
 import { ReactComponent as Pen } from 'assets/pen.svg'
 import { ReactComponent as Question } from 'assets/question.svg'
 import { ReactComponent as Cross } from 'assets/post_cross.svg'
@@ -9,7 +9,14 @@ import { ReactComponent as Hashtag } from 'assets/hashtag.svg'
 
 import { useState } from 'react'
 
-const Posting = ({ post, setPost }) => {
+const Posting = ({
+  post,
+  setPost,
+  inputValue,
+  onChange,
+  onAddPost,
+  onKeyDown,
+}) => {
   return (
     <div className={styles.PostingContainer}>
       <div className={styles.TopSection}>
@@ -35,31 +42,46 @@ const Posting = ({ post, setPost }) => {
             <img src={Avatar} alt="" className={styles.Avatar} />
             <span className={styles.Name}>Jasmine</span>
           </div>
-          <div className={styles.Text1}>
-            <span>想聊聊哪一支股票嗎？</span>
-          </div>
-          <div className={styles.Button}>
-            <button>
-              <div>加權指數</div>
-            </button>
-            <button>
-              <div>鴻海</div>
-            </button>
-            <button>
-              <div>大樹</div>
-            </button>
-            <button>
-              <div>長榮</div>
-            </button>
-            <button className={styles.AnotherStock}>
-              <div className={styles.Magnifier}>
-                <Magnifier />
-              </div>
-              <div className={styles.Text}>其它股票</div>
-            </button>
-          </div>
-          <div className={styles.Text2}>
-            <textarea placeholder="聊聊股市話題吧！"></textarea>
+          {inputValue === '' && (
+            <div className={styles.Text1}>
+              <span>想聊聊哪一支股票嗎？</span>
+            </div>
+          )}
+          {inputValue === '' && (
+            <div className={styles.Button}>
+              <button>
+                <div>加權指數</div>
+              </button>
+              <button>
+                <div>鴻海</div>
+              </button>
+              <button>
+                <div>大樹</div>
+              </button>
+              <button>
+                <div>長榮</div>
+              </button>
+              <button className={styles.AnotherStock}>
+                <div className={styles.Magnifier}>
+                  <Magnifier />
+                </div>
+                <div className={styles.Text}>其它股票</div>
+              </button>
+            </div>
+          )}
+          <div className={inputValue === '' ? styles.Text2 : styles.Active}>
+            <textarea
+              placeholder="聊聊股市話題吧！"
+              value={inputValue}
+              onChange={(e) => {
+                onChange?.(e.target.value)
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  onKeyDown?.()
+                }
+              }}
+            ></textarea>
           </div>
         </div>
       </div>
@@ -71,7 +93,7 @@ const Posting = ({ post, setPost }) => {
                 <Upload />
                 <div>加圖片</div>
               </button>
-              <button >
+              <button>
                 <Hashtag />
                 <div>標個股</div>
               </button>
@@ -79,7 +101,12 @@ const Posting = ({ post, setPost }) => {
             <span className={styles.Rule}>社群規範</span>
           </div>
           <div className={styles.PostButton}>
-            <button className={styles.Post}>發文</button>
+            <button
+              className={inputValue === '' ? styles.Post : styles.Active}
+              onClick={() => onAddPost?.()}
+            >
+              發文
+            </button>
           </div>
         </div>
       </div>

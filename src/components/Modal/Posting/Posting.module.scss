@@ -85,7 +85,6 @@
     padding: 8px;
     border-top: 1px solid #d4d4d4;
     border-bottom: 1px solid #d4d4d4;
-    overflow-y: scroll;
     .CenterSectionContainer {
       width: 98%;
       max-height: 100%;
@@ -151,13 +150,12 @@
           }
         }
       }
-      .Text2 {
+      .Text2,
+      .Active {
         textarea {
-          // outline: 3px solid salmon;
           resize: none;
-          // overflow-y: scroll;
           width: 100%;
-          // height: 350px;
+          height: 100%;
           color: #363636;
           font-size: 1.25rem;
           word-break: break-all;
@@ -166,6 +164,9 @@
             outline: none;
           }
         }
+      }
+      .Active {
+        height: 320px;
       }
     }
   }
@@ -214,7 +215,8 @@
         }
       }
       .PostButton {
-        button.Post {
+        button.Post,
+        button.Active {
           padding: 8.5px 0;
           width: 100%;
           font-size: 1.25rem;
@@ -224,6 +226,12 @@
           color: #fff;
           &:hover {
             cursor: pointer;
+          }
+        }
+        button.Active {
+          background-color: #216a7a;
+          &:hover {
+            opacity: 0.9;
           }
         }
       }
