@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/stocknote-react/static/css/main.4c0e8f12.css",
-    "main.js": "/stocknote-react/static/js/main.73be421f.js",
+    "main.css": "/stocknote-react/static/css/main.2ff6b3dd.css",
+    "main.js": "/stocknote-react/static/js/main.a1bb8712.js",
     "static/media/background.jpg": "/stocknote-react/static/media/background.0e7233630b67a10d06e3.jpg",
     "static/media/advertisement2.png": "/stocknote-react/static/media/advertisement2.e7a00ddee9dbea1b4646.png",
     "static/media/advertisement1.png": "/stocknote-react/static/media/advertisement1.5522583ff91d804c2340.png",
@@ -24,10 +24,14 @@
     "static/media/angry.svg": "/stocknote-react/static/media/angry.104278bebe581e6f4f7e18b0104cff14.svg",
     "static/media/help.svg": "/stocknote-react/static/media/help.b94a5315bfc1a89d3e53a4d48424f417.svg",
     "static/media/ha.svg": "/stocknote-react/static/media/ha.f21da7b10108a9f2d2ef380d5e779173.svg",
+    "static/media/trashcan.svg": "/stocknote-react/static/media/trashcan.468c5feff96c90e51235f253d1f131a2.svg",
+    "static/media/edit.svg": "/stocknote-react/static/media/edit.fae747c46aa8f197911310f2e14efab6.svg",
     "static/media/badge_silver.svg": "/stocknote-react/static/media/badge_silver.2a3ad4b55e21e3fbef46a908f2182c70.svg",
     "static/media/handshake.svg": "/stocknote-react/static/media/handshake.49f1f514c53190c1b6cacc8991a1b4b3.svg",
     "static/media/award.svg": "/stocknote-react/static/media/award.ec800f980530e4c787cee8bd4302162a.svg",
     "static/media/coin.svg": "/stocknote-react/static/media/coin.ec800f980530e4c787cee8bd4302162a.svg",
+    "static/media/lock.svg": "/stocknote-react/static/media/lock.fd1d4955a34b4d3d4ff7880cd02bf244.svg",
+    "static/media/warning.svg": "/stocknote-react/static/media/warning.6bf9cb6230abcabde19ac618e6096ade.svg",
     "static/media/badge.svg": "/stocknote-react/static/media/badge.6106f919a5f20b5f17b197e5e042f7f2.svg",
     "static/media/hashtag.svg": "/stocknote-react/static/media/hashtag.7cb0df97ce49f6cba93e0a8aa29fcf64.svg",
     "static/media/thumb.svg": "/stocknote-react/static/media/thumb.f35c9879e125be56f53abf368c96e188.svg",
@@ -39,6 +43,7 @@
     "static/media/reply.svg": "/stocknote-react/static/media/reply.b046e973362c4b7209c1fd623f0f09e2.svg",
     "static/media/popular_stock.svg": "/stocknote-react/static/media/popular_stock.da3c3cd57bcde8f1ede8fc78eb3bb6f7.svg",
     "static/media/avatar.svg": "/stocknote-react/static/media/avatar.eddd384bd62b51e9c2a77eafbc8f4eb9.svg",
+    "static/media/collect.svg": "/stocknote-react/static/media/collect.cfa4007a6bc7d5ba737e849bb9003591.svg",
     "static/media/share.svg": "/stocknote-react/static/media/share.0f9f95f04b17d301d32a89e65c1c75ae.svg",
     "static/media/return.svg": "/stocknote-react/static/media/return.ef7efdc2126e3e04fdfda5b58dd6b377.svg",
     "static/media/magnifier.svg": "/stocknote-react/static/media/magnifier.31a58a68ba60a1ad5826bc1c55b6c33e.svg",
@@ -55,11 +60,11 @@
     "static/media/hamburger.svg": "/stocknote-react/static/media/hamburger.1f374e5965d102c825fa10f44f5b845e.svg",
     "static/media/select.svg": "/stocknote-react/static/media/select.578b77ab21a7b69451b0e9f38863ddd3.svg",
     "static/media/arrow.svg": "/stocknote-react/static/media/arrow.21d1ec39e21573b34ffcb53f237b6dd5.svg",
-    "main.4c0e8f12.css.map": "/stocknote-react/static/css/main.4c0e8f12.css.map",
-    "main.73be421f.js.map": "/stocknote-react/static/js/main.73be421f.js.map"
+    "main.2ff6b3dd.css.map": "/stocknote-react/static/css/main.2ff6b3dd.css.map",
+    "main.a1bb8712.js.map": "/stocknote-react/static/js/main.a1bb8712.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c0e8f12.css",
-    "static/js/main.73be421f.js"
+    "static/css/main.2ff6b3dd.css",
+    "static/js/main.a1bb8712.js"
   ]
 }
