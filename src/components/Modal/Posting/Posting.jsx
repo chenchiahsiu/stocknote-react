@@ -29,11 +29,8 @@ const Posting = ({
             <Question className={styles.QuestionMark} />
             <div>提問</div>
           </div>
-          <button className={styles.Cancel}>
-            <div
-              className={styles.CrossContainer}
-              onClick={() => setPostModal('')}
-            >
+          <button className={styles.Cancel} onClick={() => setPostModal('')}>
+            <div className={styles.CrossContainer}>
               <Cross className={styles.Cross} />
             </div>
           </button>
