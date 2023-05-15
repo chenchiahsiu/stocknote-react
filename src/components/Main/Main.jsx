@@ -5,7 +5,7 @@ import Sidebar from 'components/Sidebar/Sidebar'
 import Board from 'components/Board/Board'
 import PostCollection from 'components/PostCollection/PostCollection'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   LoginStateContext,
   initialState,
@@ -13,6 +13,7 @@ import {
 import Toast from 'components/Modal/Toast/Toast'
 import Posting from 'components/Modal/Posting/Posting'
 import { dummyPosts } from 'Data/dummyPosts'
+import { getPosts } from 'api/posts'
 
 const Main = () => {
   // 管理尚未登入的顯示 model
@@ -67,6 +68,23 @@ const Main = () => {
     setInputValue('')
     setPost('')
   }
+
+  // 串接出現所有貼文
+  useEffect(() => {
+    const getPostsAsync = async () => {
+      try {
+        const posts = await getPosts()
+        setPosts(
+          posts.map((post) => ({
+            ...post,
+          }))
+        )
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    getPostsAsync()
+  }, [])
 
   return (
     <div className={styles.MainContainer}>
