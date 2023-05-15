@@ -12,7 +12,7 @@ import {
 } from 'components/contexts/LoginStateContext'
 import Toast from 'components/Modal/Toast/Toast'
 import Posting from 'components/Modal/Posting/Posting'
-import { getPosts } from 'api/posts'
+import { getPosts, createPost } from 'api/posts'
 
 const Main = () => {
   // 管理尚未登入的顯示 model
@@ -32,40 +32,58 @@ const Main = () => {
     setInputValue(value)
   }
 
-  // 加入新發文到原發文陣列中
-  const handelAddPost = () => {
+  // 加入新貼文到儲存貼文的陣列中
+  const handelAddPost = async () => {
     if (inputValue.length === 0) {
       return
     }
-    setPosts((prevPosts) => {
-      return [
-        ...prevPosts,
-        {
-          content: inputValue,
-          id: Math.random() * 100,
-        },
-      ]
-    })
-    setInputValue('')
-    setPostModal('')
+
+    try {
+      const data = await createPost({
+        content: inputValue,
+      })
+
+      setPosts((prevPosts) => {
+        return [
+          ...prevPosts,
+          {
+            content: data.content,
+            id: data.id,
+          },
+        ]
+      })
+      setInputValue('')
+      setPostModal('')
+    } catch (error) {
+      console.error(error)
+    }
   }
 
-  // 加入新發文到原發文陣列中(使用 Enter 鍵)
-  const handleKeyDown = () => {
+  // 加入新貼文到儲存貼文的陣列中(使用 Enter 鍵)
+  const handleKeyDown = async () => {
     if (inputValue.length === 0) {
       return
     }
-    setPosts((prevPosts) => {
-      return [
-        ...prevPosts,
-        {
-          content: inputValue,
-          id: Math.random() * 100,
-        },
-      ]
-    })
-    setInputValue('')
-    setPostModal('')
+
+    try {
+      const data = await createPost({
+        content: inputValue,
+      })
+
+      setPosts((prevPosts) => {
+        return [
+          ...prevPosts,
+          {
+            content: data.content,
+            id: data.id,
+          },
+        ]
+      })
+      setInputValue('')
+      setPostModal('')
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   // 串接出現所有貼文
@@ -82,6 +100,7 @@ const Main = () => {
         console.error(error)
       }
     }
+    console.log(posts.reverse())
     getPostsAsync()
   }, [])
 
