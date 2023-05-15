@@ -12,7 +12,6 @@ import {
 } from 'components/contexts/LoginStateContext'
 import Toast from 'components/Modal/Toast/Toast'
 import Posting from 'components/Modal/Posting/Posting'
-import { dummyPosts } from 'Data/dummyPosts'
 import { getPosts } from 'api/posts'
 
 const Main = () => {
@@ -26,7 +25,7 @@ const Main = () => {
   const [inputValue, setInputValue] = useState('')
 
   // 儲存所有發文陣列
-  const [posts, setPosts] = useState(dummyPosts)
+  const [posts, setPosts] = useState([])
 
   // 處理使用者輸入的發文內容
   const handleChange = (value) => {
