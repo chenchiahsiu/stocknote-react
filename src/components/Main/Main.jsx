@@ -1,6 +1,5 @@
 import styles from '../Main/Main.module.scss'
 import MainTopSection from 'components/MainTopSection/MainTopSection'
-import Post from 'components/Post/Post'
 import Advertisement from 'components/Advertisement/Advertisement'
 import Sidebar from 'components/Sidebar/Sidebar'
 import Board from 'components/Board/Board'
