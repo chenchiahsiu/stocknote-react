@@ -10,8 +10,8 @@ import { ReactComponent as Hashtag } from 'assets/hashtag.svg'
 import { useState } from 'react'
 
 const Posting = ({
-  post,
-  setPost,
+  postModal,
+  setPostModal,
   inputValue,
   onChange,
   onAddPost,
@@ -30,7 +30,10 @@ const Posting = ({
             <div>提問</div>
           </div>
           <button className={styles.Cancel}>
-            <div className={styles.CrossContainer} onClick={() => setPost('')}>
+            <div
+              className={styles.CrossContainer}
+              onClick={() => setPostModal('')}
+            >
               <Cross className={styles.Cross} />
             </div>
           </button>

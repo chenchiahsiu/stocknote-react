@@ -3,7 +3,7 @@ import { ReactComponent as Avatar } from 'assets/avatar.svg'
 import { useContext, useState } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
 
-const MainTopSection = ({ post, setPost }) => {
+const MainTopSection = ({ postModal, setPostModal }) => {
   // 管理尚未登入的顯示 model
   const [loginState, setLoginState] = useContext(LoginStateContext)
 
@@ -44,7 +44,7 @@ const MainTopSection = ({ post, setPost }) => {
       </div>
       <div className={styles.ClickPost}>
         <Avatar className={styles.Avatar} />
-        <div className={styles.Text} onClick={() => setPost('posting')}>
+        <div className={styles.Text} onClick={() => setPostModal('posting')}>
           想和大家分享什麼呢？
         </div>
       </div>

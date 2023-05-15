@@ -20,7 +20,7 @@ const Main = () => {
   const [loginState, setLoginState] = useState(initialState)
 
   // 管理發文 modal 出現
-  const [post, setPost] = useState('')
+  const [postModal, setPostModal] = useState('')
 
   // 管理使用者輸入的發文內容
   const [inputValue, setInputValue] = useState('')
@@ -48,7 +48,7 @@ const Main = () => {
       ]
     })
     setInputValue('')
-    setPost('')
+    setPostModal('')
   }
 
   // 加入新發文到原發文陣列中(使用 Enter 鍵)
@@ -66,7 +66,7 @@ const Main = () => {
       ]
     })
     setInputValue('')
-    setPost('')
+    setPostModal('')
   }
 
   // 串接出現所有貼文
@@ -95,7 +95,7 @@ const Main = () => {
           </div>
           <div className={styles.CenterContainer}>
             <Advertisement />
-            <MainTopSection post={post} setPost={setPost} />
+            <MainTopSection postModal={postModal} setPostModal={setPostModal} />
             <PostCollection posts={posts} />
           </div>
           <div className={styles.BoardContainer}>
@@ -103,10 +103,10 @@ const Main = () => {
           </div>
         </div>
         {loginState === 'Toast' && <Toast />}
-        {post === 'posting' && (
+        {postModal === 'posting' && (
           <Posting
-            post={post}
-            setPost={setPost}
+            postModal={postModal}
+            setPostModal={setPostModal}
             inputValue={inputValue}
             setInputValue={setInputValue}
             onChange={handleChange}
