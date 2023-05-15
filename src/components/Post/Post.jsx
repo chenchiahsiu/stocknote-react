@@ -35,6 +35,7 @@ const Post = ({ post }) => {
   // 跳出尚未登入的顯示 model
   function handleToast() {
     setLoginState('Toast')
+    setFeatureFrame(false)
   }
 
   // 跳出 featureFrame
@@ -58,12 +59,15 @@ const Post = ({ post }) => {
               <span className={styles.Time}>2 小時前</span>
             </div>
           </div>
-          <div className={styles.DotContainer}>
+          <div
+            className={styles.DotContainer}
+            onClick={() => handleFeatureFrame()}
+          >
             <div className={styles.Background}></div>
             {featureFrame === true && (
               <div className={styles.ClickedBackground}></div>
             )}
-            <Dot className={styles.Dot} onClick={() => handleFeatureFrame()} />
+            <Dot className={styles.Dot} />
           </div>
         </div>
       </div>
@@ -145,19 +149,19 @@ const Post = ({ post }) => {
               <Collect className={styles.Icon} />
               <span>收藏</span>
             </li>
-            <li className={styles.Feature}>
+            <li className={styles.Feature} onClick={() => handleToast()}>
               <Warning className={styles.Icon} />
               <span>檢舉</span>
             </li>
-            <li className={styles.Feature}>
+            <li className={styles.Feature} onClick={() => handleToast()}>
               <Warning className={styles.Icon} />
               <span>檢舉廣告並封鎖</span>
             </li>
-            <li className={styles.Feature}>
+            <li className={styles.Feature} onClick={() => handleToast()}>
               <Lock className={styles.Icon} />
               <span>封鎖此人</span>
             </li>
-            <li className={styles.Feature}>
+            <li className={styles.Feature} onClick={() => handleToast()}>
               <History className={styles.Icon} />
               <span>查看編輯紀錄</span>
             </li>
