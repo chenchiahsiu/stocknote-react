@@ -16,17 +16,30 @@ import { ReactComponent as Money } from 'assets/money.svg'
 import { ReactComponent as Cry } from 'assets/cry.svg'
 import { ReactComponent as Relly } from 'assets/relly.svg'
 import { ReactComponent as Angry } from 'assets/angry.svg'
+import { ReactComponent as GarbageCan } from 'assets/garbage_can.svg'
+import { ReactComponent as Collect } from 'assets/collect.svg'
+import { ReactComponent as Warning } from 'assets/warning.svg'
+import { ReactComponent as Lock } from 'assets/lock.svg'
+import { ReactComponent as History } from 'assets/history.svg'
 
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
 
 const Post = ({ post }) => {
   // 管理尚未登入的顯示 model
   const [loginState, setLoginState] = useContext(LoginStateContext)
 
+  // 管理點擊貼文右邊三個點的狀態
+  const [featureFrame, setFeatureFrame] = useState(false)
+
   // 跳出尚未登入的顯示 model
   function handleToast() {
     setLoginState('Toast')
+  }
+
+  // 跳出 featureFrame
+  function handleFeatureFrame() {
+    setFeatureFrame(!featureFrame)
   }
 
   return (
@@ -47,7 +60,10 @@ const Post = ({ post }) => {
           </div>
           <div className={styles.DotContainer}>
             <div className={styles.Background}></div>
-            <Dot className={styles.Dot} />
+            {featureFrame === true && (
+              <div className={styles.ClickedBackground}></div>
+            )}
+            <Dot className={styles.Dot} onClick={() => handleFeatureFrame()} />
           </div>
         </div>
       </div>
@@ -117,6 +133,37 @@ const Post = ({ post }) => {
         </div>
         <span className={styles.CheckMessage}>查看 38 則留言...</span>
       </div>
+
+      {featureFrame === true && (
+        <div className={styles.Features}>
+          <ul className={styles.FeaturesContainer}>
+            <li className={styles.Feature}>
+              <GarbageCan className={styles.Icon} />
+              <span>刪除此推文</span>
+            </li>
+            <li className={styles.Feature}>
+              <Collect className={styles.Icon} />
+              <span>收藏</span>
+            </li>
+            <li className={styles.Feature}>
+              <Warning className={styles.Icon} />
+              <span>檢舉</span>
+            </li>
+            <li className={styles.Feature}>
+              <Warning className={styles.Icon} />
+              <span>檢舉廣告並封鎖</span>
+            </li>
+            <li className={styles.Feature}>
+              <Lock className={styles.Icon} />
+              <span>封鎖此人</span>
+            </li>
+            <li className={styles.Feature}>
+              <History className={styles.Icon} />
+              <span>查看編輯紀錄</span>
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   )
 }

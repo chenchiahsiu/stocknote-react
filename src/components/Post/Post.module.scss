@@ -71,19 +71,23 @@
       }
       .DotContainer {
         position: relative;
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         &:hover {
           cursor: pointer;
         }
         &:hover > .Background {
-          background-color: #f4f4f4;
+          background-color: #e1e1e1;
         }
-        .Background {
+        .Background,
+        .ClickedBackground {
           position: absolute;
           width: 100%;
           height: 100%;
           border-radius: 50px;
+        }
+        .ClickedBackground {
+          background-color: #e1e1e1;
         }
         .Dot {
           width: 36px;
@@ -309,6 +313,49 @@
       font-weight: 700;
       &:hover {
         cursor: pointer;
+      }
+    }
+  }
+
+  .Features {
+    width: 232px;
+    height: 270px;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    .FeaturesContainer {
+      width: 98%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .Feature {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+        padding: 12px 8px;
+        &:hover {
+          cursor: pointer;
+          background-color: #f0f0f0;
+        }
+        .Icon {
+          width: 16px;
+          height: 16px;
+        }
+        span {
+          color: #545454;
+          font-size: 0.9375rem;
+          font-weight: 700;
+          margin-left: 8px;
+        }
       }
     }
   }

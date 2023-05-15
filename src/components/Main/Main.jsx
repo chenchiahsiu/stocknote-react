@@ -101,7 +101,6 @@ const Main = () => {
         console.error(error)
       }
     }
-    console.log(posts.reverse())
     getPostsAsync()
   }, [])
 
