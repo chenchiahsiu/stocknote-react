@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'https://localhost:3002'
+const baseUrl = 'http://localhost:3002'
 
 // 取得所有貼文
 export const getPosts = async () => {
