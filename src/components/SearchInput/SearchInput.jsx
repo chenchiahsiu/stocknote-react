@@ -2,17 +2,15 @@ import styles from 'components/SearchInput/SearchInput.module.scss'
 import { ReactComponent as Return } from 'assets/return.svg'
 import { ReactComponent as InputSearch } from 'assets/input_search.svg'
 
-const SearchInput = (search, setSearch) => {
+const SearchInput = ({ search, setSearch }) => {
   return (
     <div
       className={
-        search.search === 'searchInput'
-          ? styles.None
-          : styles.SearchInputContainer
+        search === 'searchInput' ? styles.None : styles.SearchInputContainer
       }
     >
       <div className={styles.SearchContainer}>
-        <button onClick={() => search.setSearch('searchInput')}>
+        <button onClick={() => setSearch('searchInput')}>
           <Return className={styles.Return} />
         </button>
         <div className={styles.InputContainer}>

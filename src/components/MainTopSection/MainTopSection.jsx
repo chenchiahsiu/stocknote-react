@@ -10,11 +10,6 @@ const MainTopSection = ({ postModal, setPostModal }) => {
   // 管理 '人氣'、'專欄'、'達人'...
   const [choice, setChoice] = useState('popular')
 
-  // 跳出尚未登入的顯示 model
-  function handleToast() {
-    setLoginState('Toast')
-  }
-
   // 切換 '人氣'、'專欄'、'達人'...
   function handleChoose(changePage) {
     if (changePage === 'article') {
@@ -74,8 +69,8 @@ const MainTopSection = ({ postModal, setPostModal }) => {
           >
             達人
           </span>
-          <span onClick={() => handleToast()}>自選</span>
-          <span onClick={() => handleToast()}>追蹤</span>
+          <span onClick={() => setLoginState('Toast')}>自選</span>
+          <span onClick={() => setLoginState('Toast')}>追蹤</span>
           <span
             className={choice === 'report' ? styles.Active : ''}
             onClick={() => {
