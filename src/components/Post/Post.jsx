@@ -25,7 +25,7 @@ import { ReactComponent as Edit } from 'assets/edit.svg'
 import { useContext, useState } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
 
-const Post = ({ post }) => {
+const Post = ({ post, onDelete }) => {
   // 管理尚未登入的顯示 model
   const [loginState, setLoginState] = useContext(LoginStateContext)
 
@@ -141,7 +141,7 @@ const Post = ({ post }) => {
       {featureFrame === true && (
         <div className={styles.Features}>
           <ul className={styles.FeaturesContainer}>
-            <li className={styles.Feature}>
+            <li className={styles.Feature} onClick={() => onDelete?.(post.id)}>
               <Trashcan className={styles.Icon} />
               <span>刪除文章</span>
             </li>

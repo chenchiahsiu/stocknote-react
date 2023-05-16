@@ -68,6 +68,11 @@ const Main = () => {
     setPostModal('')
   }
 
+  // 刪除貼文
+  const handleDelete = (id) => {
+    setPosts(posts.filter((post) => post.id !== id))
+  }
+
   return (
     <div className={styles.MainContainer}>
       <LoginStateContext.Provider value={[loginState, setLoginState]}>
@@ -78,7 +83,7 @@ const Main = () => {
           <div className={styles.CenterContainer}>
             <Advertisement />
             <MainTopSection postModal={postModal} setPostModal={setPostModal} />
-            <PostCollection posts={posts} />
+            <PostCollection posts={posts} onDelete={handleDelete} />
           </div>
           <div className={styles.BoardContainer}>
             <Board />
