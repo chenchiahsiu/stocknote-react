@@ -5,14 +5,14 @@ import Sidebar from 'components/Sidebar/Sidebar'
 import Board from 'components/Board/Board'
 import PostCollection from 'components/PostCollection/PostCollection'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
   LoginStateContext,
   initialState,
 } from 'components/contexts/LoginStateContext'
 import Toast from 'components/Modal/Toast/Toast'
 import Posting from 'components/Modal/Posting/Posting'
-import { getPosts, createPost } from 'api/posts'
+import { dummyPosts } from 'data/dummyPosts'
 
 const Main = () => {
   // 管理尚未登入的顯示 model
@@ -25,7 +25,7 @@ const Main = () => {
   const [inputValue, setInputValue] = useState('')
 
   // 儲存所有發文陣列
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState(dummyPosts)
 
   // 處理使用者輸入的發文內容
   const handleChange = (value) => {
@@ -33,30 +33,21 @@ const Main = () => {
   }
 
   // 加入新貼文到儲存貼文的陣列中
-  const handelAddPost = async () => {
+  const handelAddPost = () => {
     if (inputValue.length === 0) {
       return
     }
-
-    try {
-      const data = await createPost({
-        content: inputValue,
-      })
-
-      setPosts((prevPosts) => {
-        return [
-          {
-            content: data.content,
-            id: data.id,
-          },
-          ...prevPosts,
-        ]
-      })
-      setInputValue('')
-      setPostModal('')
-    } catch (error) {
-      console.error(error)
-    }
+    setPosts((prevPosts) => {
+      return [
+        {
+          content: inputValue,
+          id: Math.random() * 100,
+        },
+        ...prevPosts,
+      ]
+    })
+    setInputValue('')
+    setPostModal('')
   }
 
   // 加入新貼文到儲存貼文的陣列中(使用 Enter 鍵)
@@ -64,45 +55,18 @@ const Main = () => {
     if (inputValue.length === 0) {
       return
     }
-
-    try {
-      const data = await createPost({
-        content: inputValue,
-      })
-
-      setPosts((prevPosts) => {
-        return [
-          {
-            content: data.content,
-            id: data.id,
-          },
-          ...prevPosts,
-        ]
-      })
-      setInputValue('')
-      setPostModal('')
-    } catch (error) {
-      console.error(error)
-    }
+    setPosts((prevPosts) => {
+      return [
+        {
+          content: inputValue,
+          id: Math.random() * 100,
+        },
+        ...prevPosts,
+      ]
+    })
+    setInputValue('')
+    setPostModal('')
   }
-
-  // 串接出現所有貼文
-  useEffect(() => {
-    const getPostsAsync = async () => {
-      try {
-        const posts = await getPosts()
-        const postsReverse = posts
-          .map((post) => ({
-            ...post,
-          }))
-          .reverse()
-        setPosts(postsReverse)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-    getPostsAsync()
-  }, [])
 
   return (
     <div className={styles.MainContainer}>
