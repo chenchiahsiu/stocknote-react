@@ -51,7 +51,7 @@ const Main = () => {
   }
 
   // 加入新貼文到儲存貼文的陣列中(使用 Enter 鍵)
-  const handleKeyDown = async () => {
+  const handleKeyDown = () => {
     if (inputValue.length === 0) {
       return
     }
