@@ -72,8 +72,7 @@ const Post = ({ post, onDelete }) => {
         <div className={styles.TopRightPart}>
           <div className={styles.NameContainer}>
             <span className={styles.Name}>
-              {users[post.id] !== undefined &&
-                users[post.id].name}
+              {users[post.id] !== undefined && users[post.id].name}
             </span>
             <div className={styles.BadgeContainer}>
               <Badge className={styles.Badge} />
