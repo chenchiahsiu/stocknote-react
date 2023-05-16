@@ -22,8 +22,9 @@ import { ReactComponent as Warning } from 'assets/warning.svg'
 import { ReactComponent as Lock } from 'assets/lock.svg'
 import { ReactComponent as Edit } from 'assets/edit.svg'
 
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
+import { getUserInfo } from 'api/userInfo'
 
 const Post = ({ post, onDelete }) => {
   // 管理尚未登入的顯示 model
@@ -31,6 +32,9 @@ const Post = ({ post, onDelete }) => {
 
   // 管理點擊貼文右邊三個點的狀態
   const [featureFrame, setFeatureFrame] = useState(false)
+
+  // 儲存使用者資訊
+  const [users, setUsers] = useState([])
 
   // 跳出尚未登入的顯示 model
   function handleToast() {
@@ -43,6 +47,21 @@ const Post = ({ post, onDelete }) => {
     setFeatureFrame(!featureFrame)
   }
 
+  // 串接出現使用者資訊
+  useEffect(() => {
+    const getPostsAsync = async () => {
+      try {
+        let users = await getUserInfo()
+        if (users) {
+          setUsers(users.results)
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    getPostsAsync()
+  }, [])
+
   return (
     <div className={styles.PostContainer}>
       <div className={styles.TopSection}>
@@ -52,7 +71,10 @@ const Post = ({ post, onDelete }) => {
         </div>
         <div className={styles.TopRightPart}>
           <div className={styles.NameContainer}>
-            <span className={styles.Name}>Jasmine</span>
+            <span className={styles.Name}>
+              {users[post.id] !== undefined &&
+                users[post.id].name}
+            </span>
             <div className={styles.BadgeContainer}>
               <Badge className={styles.Badge} />
               <span className={styles.Title}>湊熱鬧達人 · </span>
