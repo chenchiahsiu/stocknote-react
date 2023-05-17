@@ -3,6 +3,7 @@ import { ReactComponent as Select } from 'assets/select.svg'
 import Background from 'assets/images/background.jpg'
 import Pic from 'assets/images/facebook_pic.jpg'
 import Index from 'assets/images/market_index.png'
+import OTC from 'assets/images/otc_index.png'
 
 import { useContext, useState } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
@@ -60,22 +61,37 @@ const Board = () => {
                 </div>
               </div>
               <div className={styles.TrendChart}>
-                <img src={Index} alt="market-index" className={styles.Index} />
+                {option === 'TSE' && (
+                  <img
+                    src={Index}
+                    alt="market-index"
+                    className={styles.Index}
+                  />
+                )}
+                {option === 'OTC' && (
+                  <img src={OTC} alt="market-index" className={styles.Index} />
+                )}
               </div>
               <div className={styles.IndexContainer}>
                 <div className={styles.column1}>
                   <div>
                     <span>指數：</span>
-                    <span className={styles.Index}>15613.69</span>
+                    <span className={styles.Index}>
+                      {option === 'TSE' ? 15613.69 : 209.5}
+                    </span>
                   </div>
                   <div>
                     <span>漲跌：</span>
-                    <span className={styles.Index}>34.51</span>
+                    <span className={styles.Index}>
+                      {option === 'TSE' ? 34.51 : 2.55}
+                    </span>
                   </div>
                 </div>
                 <div className={styles.column2}>
                   <span>成交金額：</span>
-                  <span className={styles.Price}>1883.71</span>
+                  <span className={styles.Price}>
+                    {option === 'TSE' ? 1883.71 : 692.96}
+                  </span>
                   <span> 億</span>
                 </div>
               </div>
