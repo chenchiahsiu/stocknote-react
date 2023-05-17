@@ -6,167 +6,170 @@
   left: 0;
   width: 100%;
   height: 100%;
-  .TopSection {
+  display: flex;
+  flex-direction: column;
+  .UpperContainer {
     width: 100%;
-    min-height: 56px;
-    padding: 8px 0;
-    .TopSectionContainer {
-      width: 98%;
-      min-height: 40px;
-      display: flex;
-      justify-content: center;
-      margin: 0 auto;
-      position: relative;
-      .Post {
+    height: 100%;
+    .TopSection {
+      width: 100%;
+      padding: 8px 0;
+      .TopSectionContainer {
+        width: 98%;
+        min-height: 40px;
         display: flex;
-        background-color: #d8ebef;
-        align-items: center;
-        padding: 8px 20px;
-        border-radius: 20px;
-        &:hover {
-          cursor: pointer;
+        justify-content: center;
+        margin: 0 auto;
+        position: relative;
+        .Post {
+          display: flex;
+          background-color: #d8ebef;
+          align-items: center;
+          padding: 8px 20px;
+          border-radius: 20px;
+          &:hover {
+            cursor: pointer;
+          }
+          img.Pen {
+            width: 16px;
+            height: 16px;
+          }
+          div {
+            color: #216a7a;
+            margin-left: 4px;
+            font-size: 1.125rem;
+            font-weight: 700;
+          }
         }
-        img.Pen {
-          width: 16px;
-          height: 16px;
+        .Question {
+          display: flex;
+          align-items: center;
+          background-color: #f0f0f0;
+          padding: 8px 20px;
+          border-radius: 20px;
+          margin-left: 10px;
+          &:hover {
+            background-color: #e5e5e5;
+            cursor: pointer;
+          }
+          img.QuestionMark {
+            width: 16px;
+            height: 16px;
+          }
+          div {
+            color: #8f8f8f;
+            margin-left: 4px;
+            font-size: 1.125rem;
+            font-weight: 700;
+          }
         }
-        div {
-          color: #216a7a;
-          margin-left: 4px;
-          font-size: 1.125rem;
-          font-weight: 700;
-        }
-      }
-      .Question {
-        display: flex;
-        align-items: center;
-        background-color: #f0f0f0;
-        padding: 8px 20px;
-        border-radius: 20px;
-        margin-left: 10px;
-        &:hover {
-          background-color: #e5e5e5;
-          cursor: pointer;
-        }
-        img.QuestionMark {
-          width: 16px;
-          height: 16px;
-        }
-        div {
-          color: #8f8f8f;
-          margin-left: 4px;
-          font-size: 1.125rem;
-          font-weight: 700;
-        }
-      }
-      button.Cancel {
-        position: absolute;
-        top: 0;
-        right: 0;
-        border: none;
-        padding: 12px;
-        border-radius: 50%;
-        background-color: #f0f0f0;
-        &:hover {
-          background-color: #e5e5e5;
-          cursor: pointer;
-        }
-        .CrossContainer {
-          width: 16px;
-          height: 16px;
+        button.Cancel {
+          position: absolute;
+          top: 0;
+          right: 0;
+          border: none;
+          padding: 12px;
+          border-radius: 50%;
+          background-color: #f0f0f0;
+          &:hover {
+            background-color: #e5e5e5;
+            cursor: pointer;
+          }
+          .CrossContainer {
+            width: 16px;
+            height: 16px;
+          }
         }
       }
     }
-  }
 
-  .CenterSection {
-    width: 100%;
-    height: 411px;
-    padding: 8px;
-    border-top: 1px solid #d4d4d4;
-    border-bottom: 1px solid #d4d4d4;
-    .CenterSectionContainer {
-      width: 98%;
-      max-height: 100%;
-      margin: 0 auto;
-      .User {
-        position: relative;
-        margin-bottom: 10px;
-        img.Avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-        }
-        span.Name {
-          color: #545454;
-          position: absolute;
-          top: 0;
-          margin-left: 5px;
-          padding: 2.5px 0;
-          font-size: 0.9375rem;
-        }
-      }
-      .Text1 {
-        span {
-          color: #8f8f8f;
-          font-size: 1rem;
-        }
-      }
-      .Button {
+    .CenterSection {
+      width: 100%;
+      padding: 8px;
+      border-top: 1px solid #d4d4d4;
+      .CenterSectionContainer {
         width: 98%;
-        display: flex;
-        flex-wrap: wrap;
-        padding-top: 5px;
-        margin-bottom: 6px;
-        button {
-          border: none;
-          display: flex;
-          align-items: center;
-          padding: 8px;
-          border-radius: 4px;
-          background-color: #f0f0f0;
-          margin: 4px 8px 4px 0;
-          &:hover {
-            cursor: pointer;
-            background-color: #e5e5e5;
+        max-height: 100%;
+        margin: 0 auto;
+        .User {
+          position: relative;
+          margin-bottom: 10px;
+          img.Avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
           }
-          div {
-            color: #363636;
+          span.Name {
+            color: #545454;
+            position: absolute;
+            top: 0;
+            margin-left: 5px;
             padding: 2.5px 0;
-            font-weight: 700;
-            line-height: 1rem;
+            font-size: 0.9375rem;
+          }
+        }
+        .Text1 {
+          span {
+            color: #8f8f8f;
             font-size: 1rem;
           }
         }
-        button.AnotherStock {
+        .Button {
+          width: 98%;
           display: flex;
-          position: relative;
-          div.Magnifier {
-            position: absolute;
-            top: 6px;
+          flex-wrap: wrap;
+          padding-top: 5px;
+          margin-bottom: 6px;
+          button {
+            border: none;
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            margin: 4px 8px 4px 0;
+            &:hover {
+              cursor: pointer;
+              background-color: #e5e5e5;
+            }
+            div {
+              color: #363636;
+              padding: 2.5px 0;
+              font-weight: 700;
+              line-height: 1rem;
+              font-size: 1rem;
+            }
           }
-          div.Text {
-            margin-left: 20px;
+          button.AnotherStock {
+            display: flex;
+            position: relative;
+            div.Magnifier {
+              position: absolute;
+              top: 6px;
+            }
+            div.Text {
+              margin-left: 20px;
+            }
           }
         }
-      }
-      .Text2,
-      .Active {
-        textarea {
-          resize: none;
-          width: 100%;
-          height: 100%;
-          color: #363636;
-          font-size: 1.25rem;
-          word-break: break-all;
-          border: none;
-          &:focus {
-            outline: none;
+        .Text2,
+        .Active {
+          textarea {
+            resize: none;
+            width: 100%;
+            height: 100%;
+            color: #363636;
+            font-size: 1.25rem;
+            word-break: break-all;
+            border: none;
+            &:focus {
+              outline: none;
+            }
           }
         }
-      }
-      .Active {
-        height: 320px;
+        .Active {
+          height: 320px;
+        }
       }
     }
   }
@@ -175,6 +178,7 @@
     width: 100%;
     min-height: 118px;
     padding: 15px 5px;
+    border-top: 1px solid #d4d4d4;
     .BottomSectionContainer {
       width: 98%;
       max-height: 118px;
