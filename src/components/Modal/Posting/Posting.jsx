@@ -7,8 +7,6 @@ import { ReactComponent as Magnifier } from 'assets/magnifier.svg'
 import { ReactComponent as Upload } from 'assets/upload_img.svg'
 import { ReactComponent as Hashtag } from 'assets/hashtag.svg'
 
-import { useState } from 'react'
-
 const Posting = ({
   postModal,
   setPostModal,
