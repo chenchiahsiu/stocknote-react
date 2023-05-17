@@ -10,6 +10,9 @@ const MainTopSection = ({ postModal, setPostModal }) => {
   // 管理 '人氣'、'專欄'、'達人'...
   const [choice, setChoice] = useState('popular')
 
+  // 管理 '最熱'、'最新'
+  const [postOrder, setPostOrder] = useState('popular')
+
   // 切換 '人氣'、'專欄'、'達人'...
   function handleChoose(changePage) {
     if (changePage === 'article') {
@@ -24,6 +27,15 @@ const MainTopSection = ({ postModal, setPostModal }) => {
       setChoice('news')
     } else {
       setChoice('popular')
+    }
+  }
+
+  // 切換 '最熱'、'最新'
+  function handlePostOrder(postOrder) {
+    if (postOrder === 'new') {
+      setPostOrder('new')
+    } else {
+      setPostOrder('popular')
     }
   }
 
@@ -98,8 +110,22 @@ const MainTopSection = ({ postModal, setPostModal }) => {
         </div>
       </div>
       <div className={styles.Option}>
-        <button className={styles.Active}>最熱</button>
-        <button>最新</button>
+        <button
+          className={postOrder === 'popular' ? styles.Active : ''}
+          onClick={() => {
+            handlePostOrder('popular')
+          }}
+        >
+          最熱
+        </button>
+        <button
+          className={postOrder === 'new' ? styles.Active : ''}
+          onClick={() => {
+            handlePostOrder('new')
+          }}
+        >
+          最新
+        </button>
       </div>
     </div>
   )
