@@ -1,9 +1,14 @@
 import styles from 'components/Navbar/Navbar.module.scss'
-
+import { useContext } from 'react'
+import { LoginStateContext } from 'components/contexts/LoginStateContext'
 import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const navigate = useNavigate()
+
+  // 管理尚未登入的顯示 model
+  const [loginState, setLoginState] = useContext(LoginStateContext)
+
   return (
     <div className={styles.NavbarContainer}>
       <div className={styles.LeftSection}>
@@ -28,7 +33,7 @@ const Navbar = () => {
 
           <div>
             <li>
-              <a href="">
+              <a href="#">
                 <span>理財寶商城</span>
                 <svg
                   width="12"
@@ -64,7 +69,7 @@ const Navbar = () => {
 
           <div>
             <li>
-              <a href="">
+              <a href="#">
                 <span>股市社群</span>
                 <svg
                   width="12"
@@ -97,7 +102,7 @@ const Navbar = () => {
 
           <div>
             <li>
-              <a href="">
+              <a href="#">
                 <span>投資理財</span>
                 <svg
                   width="12"
@@ -139,7 +144,7 @@ const Navbar = () => {
 
           <div>
             <li>
-              <a href="">
+              <a href="#">
                 <span>即時股市</span>
                 <svg
                   width="12"
@@ -181,7 +186,7 @@ const Navbar = () => {
 
           <div>
             <li>
-              <a href="">
+              <a href="#">
                 <span>美股專區</span>
                 <svg
                   width="12"
@@ -220,7 +225,7 @@ const Navbar = () => {
 
           <div>
             <li>
-              <a href="">
+              <a href="#">
                 <span>模擬投資</span>
                 <svg
                   width="12"
@@ -259,7 +264,7 @@ const Navbar = () => {
 
           <div>
             <li>
-              <a href="">
+              <a href="#">
                 <span>聯絡我們</span>
                 <svg
                   width="12"
@@ -297,14 +302,14 @@ const Navbar = () => {
           </div>
 
           <li>
-            <a href="">作者專區</a>
+            <a href="#">作者專區</a>
           </li>
         </ul>
       </div>
       <div className={styles.RightSection}>
         <ul>
           <li>
-            <a href="">
+            <a href="#">
               <svg
                 width="16"
                 height="16"
@@ -332,7 +337,7 @@ const Navbar = () => {
                 ></path>
                 <path d="M14 5H4L5.5 11H12.5L14 5Z" fill="white"></path>
               </svg>
-              <span>結帳</span>
+              <span onClick={() => setLoginState('Toast')}>結帳</span>
             </a>
           </li>
           <li>

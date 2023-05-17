@@ -35,22 +35,21 @@
               }
               .Button {
                 margin-bottom: 5px;
-                .TSE {
+                span,
+                .Active {
                   font-size: 0.75rem;
-                  background-color: #ae2024;
-                  color: #fff;
                   padding: 5px 6px;
                   border-radius: 3px;
                   margin-right: 5px;
                   &:hover {
                     cursor: pointer;
-                    opacity: 90%;
                   }
                 }
-                .OTC {
-                  font-size: 0.75rem;
+                .Active {
+                  background-color: #ae2024;
+                  color: #fff;
                   &:hover {
-                    cursor: pointer;
+                    opacity: 90%;
                   }
                 }
               }

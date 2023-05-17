@@ -4,12 +4,15 @@ import Background from 'assets/images/background.jpg'
 import Pic from 'assets/images/facebook_pic.jpg'
 import Index from 'assets/images/market_index.png'
 
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
 
 const Board = () => {
   // 管理尚未登入的顯示 model
   const [loginState, setLoginState] = useContext(LoginStateContext)
+
+  // 管理 '上市'、'上櫃'
+  const [option, setOption] = useState('TSE')
 
   // 影片來源
   const src =
@@ -18,6 +21,15 @@ const Board = () => {
   // 跳出尚未登入的顯示 model
   function handleToast() {
     setLoginState('Toast')
+  }
+
+  // 切換 '上市'、'上櫃'
+  function handleActive(option) {
+    if (option === 'OTC') {
+      setOption('OTC')
+    } else {
+      setOption('TSE')
+    }
   }
 
   return (
@@ -29,8 +41,22 @@ const Board = () => {
               <div className={styles.Title}>
                 <span className={styles.Heading}>大盤走勢</span>
                 <div className={styles.Button}>
-                  <span className={styles.TSE}>上市</span>
-                  <span className={styles.OTC}>上櫃</span>
+                  <span
+                    className={option === 'TSE' ? styles.Active : ''}
+                    onClick={() => {
+                      handleActive('TSE')
+                    }}
+                  >
+                    上市
+                  </span>
+                  <span
+                    className={option === 'OTC' ? styles.Active : ''}
+                    onClick={() => {
+                      handleActive('OTC')
+                    }}
+                  >
+                    上櫃
+                  </span>
                 </div>
               </div>
               <div className={styles.TrendChart}>
@@ -57,7 +83,9 @@ const Board = () => {
             <div className={styles.StockListContainer}>
               <div className={styles.Title}>
                 <span className={styles.Heading}>熱門股票</span>
-                <span className={styles.More}>更多{`>`}</span>
+                <span className={styles.More} onClick={() => handleToast()}>
+                  更多{`>`}
+                </span>
               </div>
               <div className={styles.StocksContainer}>
                 <div className={styles.Stock}>
@@ -115,7 +143,9 @@ const Board = () => {
             <div className={styles.StockListContainer}>
               <div className={styles.Title}>
                 <span className={styles.Heading}>個股速覽</span>
-                <span className={styles.More}>更多{`>`}</span>
+                <span className={styles.More} onClick={() => handleToast()}>
+                  更多{`>`}
+                </span>
               </div>
               <div className={styles.StocksContainer}>
                 <div className={styles.Stock}>

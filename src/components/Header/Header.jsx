@@ -7,9 +7,13 @@ import { ReactComponent as PopularStock } from 'assets/popular_stock.svg'
 import SearchInput from 'components/SearchInput/SearchInput'
 import Navbar from 'components/Navbar/Navbar'
 
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { LoginStateContext } from 'components/contexts/LoginStateContext'
 
 const Header = () => {
+  // 管理尚未登入的顯示 model
+  const [loginState, setLoginState] = useContext(LoginStateContext)
+
   // 管理搜尋狀態
   const [search, setSearch] = useState('searchInput')
 
@@ -49,11 +53,17 @@ const Header = () => {
               onClick={() => setSearch('onSearch')}
             />
           </div>
-          <div className={styles.IconContainer}>
+          <div
+            className={styles.IconContainer}
+            onClick={() => setLoginState('Toast')}
+          >
             <Advise className={styles.Icon} />
             <div className={styles.Text}>建議</div>
           </div>
-          <div className={styles.IconContainer}>
+          <div
+            className={styles.IconContainer}
+            onClick={() => setLoginState('Toast')}
+          >
             <PopularStock className={styles.Icon} />
             <div className={styles.Text}>熱門股票</div>
           </div>

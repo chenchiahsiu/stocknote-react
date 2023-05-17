@@ -70,21 +70,21 @@ const Sidebar = () => {
             <Plus />
             <span>我的自選股</span>
           </div>
-          <div>
+          <div onClick={() => handleToast()}>
             <Bell />
-            <span onClick={() => handleToast()}>我的通知</span>
+            <span>我的通知</span>
           </div>
           <div className={styles.Active}>
             <Message className={styles.message} />
             <span>熱門爆料</span>
             <span className={styles.HOT}>HOT</span>
           </div>
-          <div>
+          <div onClick={() => handleToast()}>
             <Flag />
             <span>精選推薦</span>
             <span className={styles.New}>NEW</span>
           </div>
-          <div>
+          <div onClick={() => handleToast()}>
             <Index />
             <span>大盤指數</span>
           </div>
@@ -105,15 +105,15 @@ const Sidebar = () => {
           </div>
         </div>
         <div className={styles.BottomOption}>
-          <div>
+          <div onClick={() => handleToast()}>
             <Badge />
             <span>熱門同學</span>
           </div>
-          <div>
+          <div onClick={() => handleToast()}>
             <Leaderboard />
             <span>熱門股票</span>
           </div>
-          <div>
+          <div onClick={() => handleToast()}>
             <Help />
             <span>熱門問答</span>
           </div>

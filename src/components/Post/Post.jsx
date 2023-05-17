@@ -136,7 +136,7 @@ const Post = ({ post, onDelete }) => {
           <Reply className={styles.Reply} />
           <span>留言</span>
         </div>
-        <div className={styles.Icon}>
+        <div className={styles.Icon} onClick={() => handleToast()}>
           <Share className={styles.Share} />
           <span>分享</span>
         </div>
@@ -166,7 +166,7 @@ const Post = ({ post, onDelete }) => {
               <Trashcan className={styles.Icon} />
               <span>刪除文章</span>
             </li>
-            <li className={styles.Feature}>
+            <li className={styles.Feature} onClick={() => handleToast()}>
               <Collect className={styles.Icon} />
               <span>收藏</span>
             </li>
@@ -182,7 +182,7 @@ const Post = ({ post, onDelete }) => {
               <Lock className={styles.Icon} />
               <span>封鎖此人</span>
             </li>
-            <li className={styles.Feature}>
+            <li className={styles.Feature} onClick={() => handleToast()}>
               <Edit className={styles.Icon} />
               <span>編輯</span>
             </li>

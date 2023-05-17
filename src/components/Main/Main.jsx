@@ -5,18 +5,15 @@ import Sidebar from 'components/Sidebar/Sidebar'
 import Board from 'components/Board/Board'
 import PostCollection from 'components/PostCollection/PostCollection'
 
-import { useState } from 'react'
-import {
-  LoginStateContext,
-  initialState,
-} from 'components/contexts/LoginStateContext'
+import { useState, useContext } from 'react'
+import { LoginStateContext } from 'components/contexts/LoginStateContext'
 import Toast from 'components/Modal/Toast/Toast'
 import Posting from 'components/Modal/Posting/Posting'
 import { dummyPosts } from 'data/dummyPosts'
 
 const Main = () => {
   // 管理尚未登入的顯示 model
-  const [loginState, setLoginState] = useState(initialState)
+  const [loginState, setLoginState] = useContext(LoginStateContext)
 
   // 管理發文 modal 出現
   const [postModal, setPostModal] = useState('')
@@ -75,33 +72,31 @@ const Main = () => {
 
   return (
     <div className={styles.MainContainer}>
-      <LoginStateContext.Provider value={[loginState, setLoginState]}>
-        <div className={styles.ContentContainer}>
-          <div className={styles.SidebarContainer}>
-            <Sidebar />
-          </div>
-          <div className={styles.CenterContainer}>
-            <Advertisement />
-            <MainTopSection postModal={postModal} setPostModal={setPostModal} />
-            <PostCollection posts={posts} onDelete={handleDelete} />
-          </div>
-          <div className={styles.BoardContainer}>
-            <Board />
-          </div>
+      <div className={styles.ContentContainer}>
+        <div className={styles.SidebarContainer}>
+          <Sidebar />
         </div>
-        {loginState === 'Toast' && <Toast />}
-        {postModal === 'posting' && (
-          <Posting
-            postModal={postModal}
-            setPostModal={setPostModal}
-            inputValue={inputValue}
-            setInputValue={setInputValue}
-            onChange={handleChange}
-            onAddPost={handelAddPost}
-            onKeyDown={handleKeyDown}
-          />
-        )}
-      </LoginStateContext.Provider>
+        <div className={styles.CenterContainer}>
+          <Advertisement />
+          <MainTopSection postModal={postModal} setPostModal={setPostModal} />
+          <PostCollection posts={posts} onDelete={handleDelete} />
+        </div>
+        <div className={styles.BoardContainer}>
+          <Board />
+        </div>
+      </div>
+      {loginState === 'Toast' && <Toast />}
+      {postModal === 'posting' && (
+        <Posting
+          postModal={postModal}
+          setPostModal={setPostModal}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          onChange={handleChange}
+          onAddPost={handelAddPost}
+          onKeyDown={handleKeyDown}
+        />
+      )}
     </div>
   )
 }
