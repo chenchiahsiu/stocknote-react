@@ -13,6 +13,26 @@ const Header = () => {
   // 管理搜尋狀態
   const [search, setSearch] = useState('searchInput')
 
+  // 管理 '自選'、'爆料'、'社團'...
+  const [option, setOption] = useState('break')
+
+  // 切換 '自選'、'爆料'、'社團'...
+  function handleOption(changeOption) {
+    if (changeOption === 'select') {
+      setOption('select')
+    } else if (changeOption === 'club') {
+      setOption('club')
+    } else if (changeOption === 'recommend') {
+      setOption('recommend')
+    } else if (changeOption === 'notice') {
+      setOption('notice')
+    } else if (changeOption === 'mine') {
+      setOption('mine')
+    } else {
+      setOption('break')
+    }
+  }
+
   return (
     <div className={styles.HeaderContainer}>
       <Navbar className={styles.Navbar} />
@@ -41,22 +61,52 @@ const Header = () => {
       </div>
       <div className={styles.HeaderBottomContainer}>
         <ul>
-          <li>
+          <li
+            className={option === 'select' ? styles.Active : ''}
+            onClick={() => {
+              handleOption('select')
+            }}
+          >
             <a href="#">自選</a>
           </li>
-          <li className={styles.Active}>
+          <li
+            className={option === 'break' ? styles.Active : ''}
+            onClick={() => {
+              handleOption('break')
+            }}
+          >
             <a href="#">爆料</a>
           </li>
-          <li>
+          <li
+            className={option === 'club' ? styles.Active : ''}
+            onClick={() => {
+              handleOption('club')
+            }}
+          >
             <a href="#">社團</a>
           </li>
-          <li>
+          <li
+            className={option === 'recommend' ? styles.Active : ''}
+            onClick={() => {
+              handleOption('recommend')
+            }}
+          >
             <a href="#">推薦</a>
           </li>
-          <li>
+          <li
+            className={option === 'notice' ? styles.Active : ''}
+            onClick={() => {
+              handleOption('notice')
+            }}
+          >
             <a href="#">通知</a>
           </li>
-          <li>
+          <li
+            className={option === 'mine' ? styles.Active : ''}
+            onClick={() => {
+              handleOption('mine')
+            }}
+          >
             <a href="#">我的</a>
           </li>
         </ul>
