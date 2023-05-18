@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Stock Note
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+為復刻 ["股市爆料同學會"](https://www.cmoney.tw/forum/popular/buzz) 此網站來練習網頁製作的一個作品。
 
-## Available Scripts
+以下介紹：
+使用者可以使用 Stock Note 來紀錄股市資訊。使用者可以發文，記錄自己的股市觀察日記，也可以刪除不喜歡的貼文。
 
-In the project directory, you can run:
+- 網站連結：[Stock Note](https://chenchiahsiu.github.io/stocknote-react/)
 
-### `npm start`
+## 專案功能
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 點擊 "想和大家分享什麼呢" 進行發文
+- 點擊 "刪除文章" 刪除不喜歡的貼文
+- 點擊登入/註冊連結到登入頁
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 安裝流程
 
-### `npm test`
+1. 確認本地環境已下載 npm 及 Node.js。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. 開啟終端機 (Terminal)，輸入以下指令下載本專案。
 
-### `npm run build`
+```
+git clone https://github.com/chenchiahsiu/stocknote-react.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. 輸入以下指令進入此專案的資料夾。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+cd stocknote-react
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. 輸入 npm 安裝指令。
 
-### `npm run eject`
+```
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. 安裝完成後輸入以下指令開啟專案。
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+6. 瀏覽器自動開啟畫面即成功。
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 開發工具
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React 18.2.0
+- Axios 0.27.2
+- React Router 6.4.1
+- Sass 1.62.0
+- React-scroll-to-top 3.0.0
