@@ -8,10 +8,22 @@ import {
   LoginStateContext,
   initialState,
 } from 'components/contexts/LoginStateContext'
+import { ReactComponent as Arrow } from 'assets/main_arrow.svg'
 
 function MainPage() {
   // 管理尚未登入的顯示 model
   const [loginState, setLoginState] = useState(initialState)
+
+  // 管理 hover 狀態
+  const [hover, setHover] = useState(false)
+
+  const handleMouseEnter = () => {
+    setHover(true)
+  }
+
+  const handleMouseLeave = () => {
+    setHover(false)
+  }
 
   return (
     <div>
@@ -21,14 +33,18 @@ function MainPage() {
       </LoginStateContext.Provider>
       <ScrollToTop
         smooth
-        color="#fff"
-        width="24"
-        height="24"
+        component={<Arrow style={{ marginTop: '3px' }} />}
         style={{
           borderRadius: '50%',
-          backgroundColor: '#b0b0b0',
-          opacity: '.8',
+          backgroundColor: hover ? '#8f8f8f' : '#b0b0b0',
+          opacity: '0.8',
+          width: '44px',
+          height: '44px',
+          bottom: '72px',
+          transition: 'all .5s ease-in-out',
         }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       />
     </div>
   )
