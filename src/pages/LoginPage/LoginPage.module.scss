@@ -1,19 +1,18 @@
 .LoginPageContainer {
   width: 100%;
-  max-height: 960px;
+  max-height: 900px;
   background-color: #fff;
-  padding-top: 20px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   .LoginPageOuterContainer {
-    max-width: 500px;
-    max-height: 93%;
+    width: 100%;
+    max-height: 100%;
     margin: 0 auto;
-    padding: 0 auto;
     .LoginPageInnerContainer {
-      width: 440px;
-      max-height: 100%;
+      max-width: 500px;
+      height: 98%;
       margin: 0 auto;
       padding-top: 85px;
       display: flex;
@@ -180,7 +179,7 @@
   }
   .Footer {
     width: 100%;
-    min-height: 100px;
+    max-height: 100px;
     font-family: 'Microsoft JhengHei', sans-serif, sans-serif;
     background-color: #fff;
     border-top: solid 1px #ddd;
@@ -195,13 +194,14 @@
         font-weight: 600;
         text-align: center;
         padding-top: 10px;
-        margin-top: 10px;
+        margin: 0 auto;
       }
       ul {
         display: flex;
         max-width: 300px;
         justify-content: space-between;
         margin: 0 auto;
+        margin-bottom: 10px;
         li {
           list-style: none;
           white-space: nowrap;
@@ -218,7 +218,7 @@
 
 @media screen and (min-width: 360px) {
   .LoginPageContainer {
-    height: 150vh;
+    max-height: 1020px;
     .Footer {
       .FooterContainer {
         .Announcement {
@@ -236,8 +236,15 @@
   }
 }
 
+@media screen and (min-width: 760px) {
+  .LoginPageContainer {
+    min-height: 100vh;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .LoginPageContainer {
+    max-height: 1020px;
     .LoginPageOuterContainer {
       .LoginPageInnerContainer {
         width: 488px;
