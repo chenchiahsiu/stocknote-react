@@ -1,17 +1,19 @@
 # Stock Note
 
-為復刻 ["股市爆料同學會"](https://www.cmoney.tw/forum/popular/buzz) 此網站來練習網頁製作的一個作品。
+為復刻 ["股市爆料同學會"](https://www.cmoney.tw/forum/popular/buzz) 此網站來練習網頁製作的作品。
 
-以下介紹：
-使用者可以使用 Stock Note 來紀錄股市資訊。使用者可以發文，記錄自己的股市觀察日記，也可以刪除不喜歡的貼文。
+以下介紹：<br/>
+在 Stock Note，使用者可以發文，記錄自己的股市觀察日記，也可以刪除不喜歡的貼文。
 
-- 網站連結：[Stock Note](https://chenchiahsiu.github.io/stocknote-react/)
+網站連結：[Stock Note](https://chenchiahsiu.github.io/stocknote-react/)
 
 ## 專案功能
 
 - 點擊 "想和大家分享什麼呢" 進行發文
 - 點擊 "刪除文章" 刪除不喜歡的貼文
 - 點擊登入/註冊連結到登入頁
+- RWD 設計，網站在不同裝置皆可使用
+- API 串接不同貼文使用者的名稱
 
 ## 安裝流程
 
