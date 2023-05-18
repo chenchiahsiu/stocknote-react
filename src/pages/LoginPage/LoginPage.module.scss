@@ -1,15 +1,18 @@
 .LoginPageContainer {
-  width: 100vw;
-  height: 168vh;
+  width: 100%;
+  max-height: 960px;
   background-color: #fff;
-  padding: 0 10px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .LoginPageOuterContainer {
     max-width: 500px;
     max-height: 93%;
     margin: 0 auto;
     padding: 0 auto;
     .LoginPageInnerContainer {
-      max-width: 440px;
+      width: 440px;
       max-height: 100%;
       margin: 0 auto;
       padding-top: 85px;
@@ -24,7 +27,7 @@
       .TopSection {
         max-width: 100%;
         max-height: 250px;
-        padding-top: 20px;
+        padding: 20px 10px 0;
         margin-bottom: 20px;
         input {
           font-family: 'Microsoft JhengHei', sans-serif, sans-serif;
@@ -73,6 +76,7 @@
         width: 100%;
         font-family: 'Microsoft JhengHei', sans-serif;
         margin-bottom: 20px;
+        padding: 0 10px;
         .Regist {
           text-align: center;
           margin: 4px 0 24px;
@@ -175,7 +179,7 @@
     }
   }
   .Footer {
-    width: 100vw;
+    width: 100%;
     min-height: 100px;
     font-family: 'Microsoft JhengHei', sans-serif, sans-serif;
     background-color: #fff;
