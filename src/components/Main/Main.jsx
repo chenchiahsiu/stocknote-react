@@ -42,7 +42,7 @@ const Main = () => {
       id: Math.floor(Math.random() * 200),
     }
 
-    newPosts.push(newPost)
+    newPosts.unshift(newPost)
     localStorage.setItem('newPosts', JSON.stringify(newPosts))
 
     setAllPosts(newPosts)
@@ -61,7 +61,7 @@ const Main = () => {
       id: Math.floor(Math.random() * 200),
     }
 
-    newPosts.push(newPost)
+    newPosts.unshift(newPost)
     localStorage.setItem('newPosts', JSON.stringify(newPosts))
 
     setAllPosts(newPosts)

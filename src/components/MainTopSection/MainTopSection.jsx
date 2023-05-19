@@ -11,7 +11,7 @@ const MainTopSection = ({ postModal, setPostModal }) => {
   const [choice, setChoice] = useState('popular')
 
   // 管理 '最熱'、'最新'
-  const [postOrder, setPostOrder] = useState('popular')
+  const [postOrder, setPostOrder] = useState('new')
 
   // 切換 '人氣'、'專欄'、'達人'...
   function handleChoose(changePage) {
