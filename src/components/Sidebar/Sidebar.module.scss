@@ -199,6 +199,16 @@
           right: 7px;
         }
       }
+      .Active {
+        background-color: #bbb;
+        color: #fff;
+        .message {
+          fill: #fff;
+        }
+        &:hover {
+          background-color: #bbb;
+        }
+      }
     }
     .LastOption {
       border: none;

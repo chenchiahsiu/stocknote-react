@@ -26,7 +26,7 @@ import { useContext, useState, useEffect } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
 import { getUserInfo } from 'api/userInfo'
 
-const Post = ({ post, onDelete }) => {
+const Post = ({ post, onDelete, onLike }) => {
   // 管理尚未登入的顯示 model
   const [loginState, setLoginState] = useContext(LoginStateContext)
 
@@ -45,6 +45,12 @@ const Post = ({ post, onDelete }) => {
   // 跳出 featureFrame
   function handleFeatureFrame() {
     setFeatureFrame(!featureFrame)
+  }
+
+  // 處理點擊收藏貼文
+  function handleLike(id) {
+    onLike(id)
+    setFeatureFrame(false)
   }
 
   // 串接出現使用者資訊
@@ -166,7 +172,10 @@ const Post = ({ post, onDelete }) => {
               <Trashcan className={styles.Icon} />
               <span>刪除文章</span>
             </li>
-            <li className={styles.Feature} onClick={() => handleToast()}>
+            <li
+              className={styles.Feature}
+              onClick={() => handleLike?.(post.id)}
+            >
               <Collect className={styles.Icon} />
               <span>收藏</span>
             </li>

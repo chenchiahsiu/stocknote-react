@@ -2,12 +2,14 @@ import styles from 'components/Sidebar/Sidebar.module.scss'
 import { ReactComponent as Avatar } from 'assets/avatar.svg'
 import { ReactComponent as Plus } from 'assets/plus.svg'
 import { ReactComponent as Bell } from 'assets/bell.svg'
+import { ReactComponent as MessageHover } from 'assets/message_hover.svg'
 import { ReactComponent as Message } from 'assets/message.svg'
 import { ReactComponent as Flag } from 'assets/flag.svg'
 import { ReactComponent as Index } from 'assets/stock_index.svg'
 import { ReactComponent as Wall } from 'assets/wall.svg'
 import { ReactComponent as Club } from 'assets/club.svg'
 import { ReactComponent as Favorite } from 'assets/favorite.svg'
+import { ReactComponent as FavoriteHover } from 'assets/favorite_hover.svg'
 import { ReactComponent as Arrow } from 'assets/arrow.svg'
 import { ReactComponent as Badge } from 'assets/badge.svg'
 import { ReactComponent as Leaderboard } from 'assets/leaderboard.svg'
@@ -17,7 +19,7 @@ import { ReactComponent as Handshake } from 'assets/handshake.svg'
 import { useContext } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
 
-const Sidebar = () => {
+const Sidebar = ({ sidebarOption, setSidebarOption }) => {
   // 管理尚未登入的顯示 model
   const [loginState, setLoginState] = useContext(LoginStateContext)
 
@@ -74,8 +76,11 @@ const Sidebar = () => {
             <Bell />
             <span>我的通知</span>
           </div>
-          <div className={styles.Active}>
-            <Message className={styles.message} />
+          <div
+            className={sidebarOption === 'break' ? styles.Active : ''}
+            onClick={() => setSidebarOption('break')}
+          >
+            {sidebarOption === 'break' ? <MessageHover /> : <Message />}
             <span>熱門爆料</span>
             <span className={styles.HOT}>HOT</span>
           </div>
@@ -99,8 +104,11 @@ const Sidebar = () => {
             <span>我的社團</span>
             <Arrow className={styles.Arrow} />
           </div>
-          <div onClick={() => handleToast()}>
-            <Favorite />
+          <div
+            className={sidebarOption === 'favorite' ? styles.Active : ''}
+            onClick={() => setSidebarOption('favorite')}
+          >
+            {sidebarOption === 'favorite' ? <FavoriteHover /> : <Favorite />}
             <span>我的收藏</span>
           </div>
         </div>
