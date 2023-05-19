@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/stocknote-react/static/css/main.e58a53f4.css",
-    "main.js": "/stocknote-react/static/js/main.0b2a9003.js",
+    "main.css": "/stocknote-react/static/css/main.64e1b5d7.css",
+    "main.js": "/stocknote-react/static/js/main.cfb7a946.js",
     "static/media/background.jpg": "/stocknote-react/static/media/background.0e7233630b67a10d06e3.jpg",
     "static/media/advertisement2.png": "/stocknote-react/static/media/advertisement2.e7a00ddee9dbea1b4646.png",
     "static/media/advertisement1.png": "/stocknote-react/static/media/advertisement1.5522583ff91d804c2340.png",
@@ -16,7 +16,8 @@
     "static/media/like.svg": "/stocknote-react/static/media/like.39385318d4a6fef64dc7dc66e4a5a98c.svg",
     "static/media/cry.svg": "/stocknote-react/static/media/cry.1095be8f52a9b3286a46e858cdae3434.svg",
     "static/media/camera.svg": "/stocknote-react/static/media/camera.9a78e01e169738e55cd1d5e73886cf46.svg",
-    "static/media/message.svg": "/stocknote-react/static/media/message.66d3d72e659f7c403fb027110fb0c275.svg",
+    "static/media/message.svg": "/stocknote-react/static/media/message.e7e1da598a7f6a38e2ad3da7f9d3f1f8.svg",
+    "static/media/message_hover.svg": "/stocknote-react/static/media/message_hover.a6e910ddea6edff3cafb7855e16be78a.svg",
     "static/media/leaderboard.svg": "/stocknote-react/static/media/leaderboard.b7e2a5c758c9c14e081913b3c5733a95.svg",
     "static/media/question.svg": "/stocknote-react/static/media/question.de74cffab24a05aed57acdb6df676b08.svg",
     "static/media/logo.svg": "/stocknote-react/static/media/logo.982e0ff02feffb968294da4f30a11772.svg",
@@ -40,6 +41,7 @@
     "static/media/upload_img.svg": "/stocknote-react/static/media/upload_img.fc4472aa18d1473b0f4ae3bc76bb3bd1.svg",
     "index.html": "/stocknote-react/index.html",
     "static/media/favorite.svg": "/stocknote-react/static/media/favorite.8f75b8eaea1ebd70722e00a73883d1f5.svg",
+    "static/media/favorite_hover.svg": "/stocknote-react/static/media/favorite_hover.8415d38cce397ffc398e8f680d7019fe.svg",
     "static/media/input_search.svg": "/stocknote-react/static/media/input_search.def674cc5ec9562b1d012bf3a9df423d.svg",
     "static/media/reply.svg": "/stocknote-react/static/media/reply.b046e973362c4b7209c1fd623f0f09e2.svg",
     "static/media/popular_stock.svg": "/stocknote-react/static/media/popular_stock.da3c3cd57bcde8f1ede8fc78eb3bb6f7.svg",
@@ -62,11 +64,11 @@
     "static/media/main_arrow.svg": "/stocknote-react/static/media/main_arrow.1f506826fbf13c6ff4268c59ae21ae1d.svg",
     "static/media/select.svg": "/stocknote-react/static/media/select.578b77ab21a7b69451b0e9f38863ddd3.svg",
     "static/media/arrow.svg": "/stocknote-react/static/media/arrow.21d1ec39e21573b34ffcb53f237b6dd5.svg",
-    "main.e58a53f4.css.map": "/stocknote-react/static/css/main.e58a53f4.css.map",
-    "main.0b2a9003.js.map": "/stocknote-react/static/js/main.0b2a9003.js.map"
+    "main.64e1b5d7.css.map": "/stocknote-react/static/css/main.64e1b5d7.css.map",
+    "main.cfb7a946.js.map": "/stocknote-react/static/js/main.cfb7a946.js.map"
   },
   "entrypoints": [
-    "static/css/main.e58a53f4.css",
-    "static/js/main.0b2a9003.js"
+    "static/css/main.64e1b5d7.css",
+    "static/js/main.cfb7a946.js"
   ]
 }
