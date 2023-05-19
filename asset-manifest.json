@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/stocknote-react/static/css/main.64e1b5d7.css",
-    "main.js": "/stocknote-react/static/js/main.cfb7a946.js",
+    "main.js": "/stocknote-react/static/js/main.32f9a42a.js",
     "static/media/background.jpg": "/stocknote-react/static/media/background.0e7233630b67a10d06e3.jpg",
     "static/media/advertisement2.png": "/stocknote-react/static/media/advertisement2.e7a00ddee9dbea1b4646.png",
     "static/media/advertisement1.png": "/stocknote-react/static/media/advertisement1.5522583ff91d804c2340.png",
@@ -65,10 +65,10 @@
     "static/media/select.svg": "/stocknote-react/static/media/select.578b77ab21a7b69451b0e9f38863ddd3.svg",
     "static/media/arrow.svg": "/stocknote-react/static/media/arrow.21d1ec39e21573b34ffcb53f237b6dd5.svg",
     "main.64e1b5d7.css.map": "/stocknote-react/static/css/main.64e1b5d7.css.map",
-    "main.cfb7a946.js.map": "/stocknote-react/static/js/main.cfb7a946.js.map"
+    "main.32f9a42a.js.map": "/stocknote-react/static/js/main.32f9a42a.js.map"
   },
   "entrypoints": [
     "static/css/main.64e1b5d7.css",
-    "static/js/main.cfb7a946.js"
+    "static/js/main.32f9a42a.js"
   ]
 }
