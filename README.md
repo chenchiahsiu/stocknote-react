@@ -1,7 +1,7 @@
 # Stock Note
 
 為復刻 ["股市爆料同學會"](https://www.cmoney.tw/forum/popular/buzz) 此網站來練習網頁製作的作品。<br/>
-在 Stock Note，使用者可以發文，記錄自己的股市觀察日記，可以使用收藏功能將喜愛的貼文存到我的收藏，也可以刪除不喜歡的貼文。
+在 Stock Note，使用者可以發文，記錄自己的股市觀察日記，可以使用收藏功能將喜愛的貼文存到收藏清單中，也可以刪除不喜歡的貼文。
 
 網站連結：[Stock Note](https://chenchiahsiu.github.io/stocknote-react/)
 
