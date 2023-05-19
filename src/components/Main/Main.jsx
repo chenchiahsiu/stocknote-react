@@ -9,7 +9,6 @@ import { useState, useContext } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
 import Toast from 'components/Modal/Toast/Toast'
 import Posting from 'components/Modal/Posting/Posting'
-import { dummyPosts } from 'data/dummyPosts'
 
 const Main = () => {
   // 管理尚未登入的顯示 model
@@ -21,8 +20,11 @@ const Main = () => {
   // 管理使用者輸入的發文內容
   const [inputValue, setInputValue] = useState('')
 
-  // 儲存所有發文陣列
-  const [posts, setPosts] = useState(dummyPosts)
+  // 新發文陣列
+  const newPosts = JSON.parse(localStorage.getItem('newPosts')) || []
+
+  // 儲存所有發文
+  const [allPosts, setAllPosts] = useState(newPosts)
 
   // 處理使用者輸入的發文內容
   const handleChange = (value) => {
@@ -34,15 +36,16 @@ const Main = () => {
     if (inputValue.length === 0) {
       return
     }
-    setPosts((prevPosts) => {
-      return [
-        {
-          content: inputValue,
-          id: Math.floor(Math.random() * 200),
-        },
-        ...prevPosts,
-      ]
-    })
+
+    const newPost = {
+      content: inputValue,
+      id: Math.floor(Math.random() * 200),
+    }
+
+    newPosts.push(newPost)
+    localStorage.setItem('newPosts', JSON.stringify(newPosts))
+
+    setAllPosts(newPosts)
     setInputValue('')
     setPostModal('')
   }
@@ -52,22 +55,39 @@ const Main = () => {
     if (inputValue.length === 0) {
       return
     }
-    setPosts((prevPosts) => {
-      return [
-        {
-          content: inputValue,
-          id: Math.floor(Math.random() * 200),
-        },
-        ...prevPosts,
-      ]
-    })
+
+    const newPost = {
+      content: inputValue,
+      id: Math.floor(Math.random() * 200),
+    }
+
+    newPosts.push(newPost)
+    localStorage.setItem('newPosts', JSON.stringify(newPosts))
+
+    setAllPosts(newPosts)
     setInputValue('')
     setPostModal('')
   }
 
   // 刪除貼文
   const handleDelete = (id) => {
-    setPosts(posts.filter((post) => post.id !== id))
+    // allPosts 發文是空的就結束
+    if (!allPosts || !allPosts.length) return
+
+    // 回傳點擊要刪除的貼文被儲存於 localStorage 陣列中所在的 index
+    const postIndex = allPosts.findIndex((post) => post.id === id)
+
+    // 傳入的 id 不存在就結束
+    if (postIndex === -1) return
+
+    // 從點擊刪除的 index 的位置開始刪除，刪除 1 個元素
+    allPosts.splice(postIndex, 1)
+
+    // 更新後的陣列重新儲存回去 localStorage
+    localStorage.setItem('newPosts', JSON.stringify(allPosts))
+
+    // 更新陣列渲染畫面
+    setAllPosts(allPosts.filter((post) => post.id !== id))
   }
 
   return (
@@ -79,7 +99,7 @@ const Main = () => {
         <div className={styles.CenterContainer}>
           <Advertisement />
           <MainTopSection postModal={postModal} setPostModal={setPostModal} />
-          <PostCollection posts={posts} onDelete={handleDelete} />
+          <PostCollection posts={allPosts} onDelete={handleDelete} />
         </div>
         <div className={styles.BoardContainer}>
           <Board />
