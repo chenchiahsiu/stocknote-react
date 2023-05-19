@@ -114,7 +114,7 @@ const Main = () => {
       return alert('已在收藏清單中!')
 
     // 貼文加入收藏陣列中
-    LikePosts.push(post)
+    LikePosts.unshift(post)
 
     // 更新儲存收藏貼文的 localStorage
     localStorage.setItem('LikePosts', JSON.stringify(LikePosts))
