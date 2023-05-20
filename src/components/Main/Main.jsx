@@ -30,7 +30,9 @@ const Main = () => {
   const [allPosts, setAllPosts] = useState(newPosts)
 
   // 儲存收藏貼文
-  const [likePosts, setLikePosts] = useState([])
+  const [likePosts, setLikePosts] = useState(
+    JSON.parse(localStorage.getItem('LikePosts')) || []
+  )
 
   // 處理使用者輸入的發文內容
   const handleChange = (value) => {
