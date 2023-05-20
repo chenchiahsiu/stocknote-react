@@ -67,7 +67,7 @@ const Post = ({ post, onDelete, onLike }) => {
       }
     }
     getPostsAsync()
-  }, [])
+  }, [post.id])
 
   return (
     <div className={styles.PostContainer}>

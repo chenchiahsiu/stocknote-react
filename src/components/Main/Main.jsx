@@ -12,7 +12,7 @@ import Posting from 'components/Modal/Posting/Posting'
 
 const Main = () => {
   // 管理尚未登入的顯示 model
-  const [loginState, setLoginState] = useContext(LoginStateContext)
+  const [loginState] = useContext(LoginStateContext)
 
   // 管理發文 modal 出現
   const [postModal, setPostModal] = useState('')
