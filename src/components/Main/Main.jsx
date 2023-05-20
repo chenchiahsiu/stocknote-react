@@ -47,7 +47,7 @@ const Main = () => {
 
     const newPost = {
       content: inputValue,
-      id: Math.floor(Math.random() * 200),
+      id: Math.random() * 200,
     }
 
     newPosts.unshift(newPost)
@@ -66,7 +66,7 @@ const Main = () => {
 
     const newPost = {
       content: inputValue,
-      id: Math.floor(Math.random() * 200),
+      id: Math.random() * 200,
     }
 
     newPosts.unshift(newPost)

@@ -57,9 +57,10 @@ const Post = ({ post, onDelete, onLike }) => {
   useEffect(() => {
     const getPostsAsync = async () => {
       try {
-        let users = await getUserInfo()
+        const id = post.id
+        let users = await getUserInfo({ id })
         if (users) {
-          setUsers(users.results)
+          setUsers(users)
         }
       } catch (error) {
         console.error(error)
@@ -77,9 +78,7 @@ const Post = ({ post, onDelete, onLike }) => {
         </div>
         <div className={styles.TopRightPart}>
           <div className={styles.NameContainer}>
-            <span className={styles.Name}>
-              {users[post.id] !== undefined && users[post.id].name}
-            </span>
+            <span className={styles.Name}>{users.name}</span>
             <div className={styles.BadgeContainer}>
               <Badge className={styles.Badge} />
               <span className={styles.Title}>湊熱鬧達人 · </span>
