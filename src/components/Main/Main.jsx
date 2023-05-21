@@ -10,7 +10,7 @@ import { LoginStateContext } from 'components/contexts/LoginStateContext'
 import Toast from 'components/Modal/Toast/Toast'
 import Posting from 'components/Modal/Posting/Posting'
 
-const Main = () => {
+const Main = ({ sidebarOption, setSidebarOption }) => {
   // 管理尚未登入的顯示 model
   const [loginState] = useContext(LoginStateContext)
 
@@ -19,9 +19,6 @@ const Main = () => {
 
   // 管理使用者輸入的發文內容
   const [inputValue, setInputValue] = useState('')
-
-  // 管理 "熱門爆料"、"我的收藏"
-  const [sidebarOption, setSidebarOption] = useState('break')
 
   // 新發文陣列
   const newPosts = JSON.parse(localStorage.getItem('newPosts')) || []

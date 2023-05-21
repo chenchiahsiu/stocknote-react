@@ -13,6 +13,9 @@ function MainPage() {
   // 管理尚未登入的顯示 model
   const [loginState, setLoginState] = useState(initialState)
 
+  // 管理 "熱門爆料"、"我的收藏"
+  const [sidebarOption, setSidebarOption] = useState('break')
+
   // 管理 hover 狀態
   const [hover, setHover] = useState(false)
 
@@ -27,8 +30,14 @@ function MainPage() {
   return (
     <div>
       <LoginStateContext.Provider value={[loginState, setLoginState]}>
-        <Header />
-        <Main />
+        <Header
+          sidebarOption={sidebarOption}
+          setSidebarOption={setSidebarOption}
+        />
+        <Main
+          sidebarOption={sidebarOption}
+          setSidebarOption={setSidebarOption}
+        />
       </LoginStateContext.Provider>
       <ScrollToTop
         smooth
