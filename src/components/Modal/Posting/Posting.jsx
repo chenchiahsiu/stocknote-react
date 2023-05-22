@@ -39,7 +39,7 @@ const Posting = ({
           <div className={styles.CenterSectionContainer}>
             <div className={styles.User}>
               <img src={Avatar} alt="" className={styles.Avatar} />
-              <span className={styles.Name}>Jasmine</span>
+              <span className={styles.Name}>訪客</span>
             </div>
             {inputValue === '' && (
               <div className={styles.Text1}>
