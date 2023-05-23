@@ -22,7 +22,7 @@ import { ReactComponent as Warning } from 'assets/warning.svg'
 import { ReactComponent as Lock } from 'assets/lock.svg'
 import { ReactComponent as Edit } from 'assets/edit.svg'
 
-import { useContext, useState, useEffect } from 'react'
+import { useContext, useState, useEffect, useRef } from 'react'
 import { LoginStateContext } from 'components/contexts/LoginStateContext'
 import { getUserInfo } from 'api/userInfo'
 
@@ -35,6 +35,9 @@ const Post = ({ post, onDelete, onLike }) => {
 
   // 儲存使用者資訊
   const [users, setUsers] = useState([])
+
+  // 使用 useRef 獲得點擊貼文右邊三個點的資料
+  const selectRef = useRef(null)
 
   // 跳出尚未登入的顯示 model
   function handleToast() {
@@ -53,6 +56,14 @@ const Post = ({ post, onDelete, onLike }) => {
     setFeatureFrame(false)
   }
 
+  // 處理若不是點擊貼文右邊三個點會關閉 featureFrame
+  function clickCallback(event) {
+    if (selectRef.current.contains(event.target)) {
+      return
+    }
+    setFeatureFrame(false)
+  }
+
   // 串接出現使用者資訊
   useEffect(() => {
     const getPostsAsync = async () => {
@@ -68,6 +79,16 @@ const Post = ({ post, onDelete, onLike }) => {
     }
     getPostsAsync()
   }, [post.id])
+
+  // 在 document 增加點擊事件監聽
+  useEffect(() => {
+    if (featureFrame) {
+      document.addEventListener('click', clickCallback, false)
+      return () => {
+        document.removeEventListener('click', clickCallback, false)
+      }
+    }
+  }, [featureFrame])
 
   return (
     <div className={styles.PostContainer}>
@@ -88,6 +109,7 @@ const Post = ({ post, onDelete, onLike }) => {
           <div
             className={styles.DotContainer}
             onClick={() => handleFeatureFrame()}
+            ref={selectRef}
           >
             <div className={styles.Background}></div>
             {featureFrame === true && (
