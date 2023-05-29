@@ -5,6 +5,17 @@
 
 網站連結：[Stock Note](https://chenchiahsiu.github.io/stocknote-react/)
 
+## 預覽圖片
+
+**首頁**
+![image](/public/homepage.png)
+
+**發文**
+![image](/public/posting.png)
+
+**刪除、收藏文章**
+![image](/public/feature_frame.png)
+
 ## 專案功能
 
 - 點擊 "想和大家分享什麼呢" 進行發文
